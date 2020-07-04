@@ -75,8 +75,6 @@ footer {
 
 .action-box {
     padding: 0;
-    display: flex;
-    justify-content: space-between;
 }
 
 .timer,
@@ -103,7 +101,7 @@ footer {
 }
 
 .btn {
-    display: inline-block;
+    display: block;
     font-size: .85rem;
     font-weight: 900;
     text-align: center;
@@ -117,12 +115,10 @@ footer {
 }
 
 .btn-primary {
-    width: 49%;
     background: skyblue;
     
 }
 
 .btn-secondary {
-    width: 49%;
     background: yellow;
 }
