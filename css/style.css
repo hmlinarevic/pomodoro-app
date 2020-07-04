@@ -101,6 +101,7 @@ footer {
 }
 
 .btn {
+    color: #fff;
     display: block;
     font-size: .85rem;
     font-weight: 900;
@@ -108,17 +109,16 @@ footer {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 50px;
     padding: .75em 2em;
     margin-bottom: .5em;
 }
 
 .btn-primary {
-    background: skyblue;
+    background: #337357;
     
 }
 
 .btn-secondary {
-    background: yellow;
+    background: #EE3328;
 }
