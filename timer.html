@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer | Pomodoro</title>
+    <script src="https://kit.fontawesome.com/8128d8decc.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -42,15 +43,36 @@
                     <h2 class="display__time-left">25:00</h2>
                 </div>
                 <div class="timer-controls">
-                    <button class="timer__button">start</button>
-                    <button class="timer__button">stop</button>
-                    <button class="timer__button">reset</button>
+                    <button class="timer__button timer__button-start">start</button>
+                    <button class="timer__button timer__button-reset">reset</button>
+                    <!-- open modal button -->
+                    <button class="open-modal-btn timer__button timer__button-settings">
+                        <i class="fas fa-sliders-h"></i>
+                    </button>
+                    
+                    <!-- modal -->
+                    <div class="modal">
+                        <div class="modal-content">
+                            <section class="modal-header">
+                                <span class="close-modal-btn">&times;</span>
+                                <h2>Modal Header</h2>
+                            </section>
+                            <section class="modal-body">
+                                <p>Select time interval</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit rem delectus odio, deleniti amet vero laudantium esse fugit facilis?</p>
+                            </section>
+                            <section class="modal-footer">
+                                <h3>modal footer</h3>
+                            </section>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="start.js"></script>
+    <script src="timer.js"></script>
 </body>
 
 </html>
