@@ -5,72 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer | Pomodoro</title>
-    <script src="https://kit.fontawesome.com/8128d8decc.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/timer.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="container container-flex pa2">
-            <a href="./index.html">
-                <img class="logo" src="./logo/pomodoro.png" alt="tomato with green leaves on top">
-            </a>
-            <p class="description">time management method</p>
-        </div>
-    </header>
+    <a class="home-link" href="./index.html"><span>go back</span></a>
 
-    <div class="container">
-        <hr>
+    <div class="timer">
+        <div class="timer__display">25:00</div>
+        <div class="timer__controls">
+            <button class="timer__btn">start</button>
+            <button class="timer__btn">stop</button>
+            <button class="timer__btn" id="modal__open"><span class="timer__icon-wrench fas fa-wrench"></span></button>
+        </div>
     </div>
-    
-    <main class="main">
-        <div class="container ">
-            <section class="about pa2">
-                <p>Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s.</p>
-                <p>The technique uses a <em>timer</em> to break down work into <em>intervals</em>, traditionally 25 mintures in length, seperated by short breaks.</p>
-                <p>Each interval is known as a <em>pomodoro</em>, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student.</p>
+
+    <!-- <div class="modal"> -->
+        <div class="modal__content">
+            <!-- <span id="modal__close" class="fas fa-times"></span> -->
+            <h3 class="modal__header">Timer settings</h3>
+            <section class="modal__inputs">
+                <div>
+                    <label for="interval">interval</label>
+                    <input id="interval" type="number" value="25" data-type="interval">
+                </div>
+                <div>
+                    <label for="short">short break</label>
+                    <input id="short" type="number" value="5" data-type="short">
+                </div>
+                <div>
+                    <label for="long">long break</label>
+                    <input id="long" type="number" value="60" data-type="long">
+                </div>
+            </section>
+            <section class="modal__footer">
+                <button id="modal__apply">apply</button>
             </section>
         </div>
-
-        <div class="container">
-            <hr>
-        </div>
-
-        <div class="container pa2">
-            <div class="timer container-flex">
-                <div class="display">
-                    <h2 class="display__time-left">25:00</h2>
-                </div>
-                <div class="timer-controls">
-                    <button class="timer__button timer__button-start">start</button>
-                    <button class="timer__button timer__button-reset">reset</button>
-                    <!-- open modal button -->
-                    <button class="open-modal-btn timer__button timer__button-settings">
-                        <i class="fas fa-sliders-h"></i>
-                    </button>
-                    
-                    <!-- modal -->
-                    <div class="modal">
-                        <div class="modal-content">
-                            <section class="modal-header">
-                                <span class="close-modal-btn">&times;</span>
-                                <h2>Modal Header</h2>
-                            </section>
-                            <section class="modal-body">
-                                <p>Select time interval</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui impedit rem delectus odio, deleniti amet vero laudantium esse fugit facilis?</p>
-                            </section>
-                            <section class="modal-footer">
-                                <h3>modal footer</h3>
-                            </section>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </main>
+    <!-- </div> -->
 
     <script src="timer.js"></script>
 </body>
