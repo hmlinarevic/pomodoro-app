@@ -1,0 +1,265 @@
+* { box-sizing: border-box; }
+
+body {
+    color: #333;
+    background: #f8f9fa;
+    font-size: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+h2 {
+    margin: 0;
+}
+
+/* layout */
+
+.wrapper {
+    min-width: 480px;
+    max-width: 480px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    display: grid;
+    gap: 2rem;
+    padding: 3rem;
+    margin: 0 auto;
+}
+
+.header__logo {
+    width: 100px;
+}
+
+.article__body {
+    font-size: 1.1em;
+    line-height: 2;
+    margin: 0;
+}
+
+.footer p {
+    font-size: .65rem;
+    text-align: center;
+    margin: 0;
+}
+
+/* buttons */
+
+.buttons {
+    display: grid;
+    row-gap: .75rem;
+}
+
+.btn {
+    color: #fff;
+    font-size: .725rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    padding: .85em 0;
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,.35);
+    transition: transform 350ms;
+}
+
+.btn:hover,
+.btn:focus {
+    transform: scale(1.02);
+}
+
+.btn-primary {
+    background: #337357;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: #3E8E6B;
+}
+
+.btn-secondary {
+    background: #EE3328;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background: #F04B42;
+}
+
+/* rest */
+
+.home-link {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+/* ============
+timer
+============ */
+
+.timer {
+    z-index: 1;
+}
+
+.timer__header {
+    height: 274px;
+    width: 500px;
+    background-color: #8447FF;
+    color: #0C1B33;
+    border-radius: 20px;
+    padding: 4rem 8rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 2;
+
+}
+
+.timer__display {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.timer__buttons {
+    display: flex;
+}
+
+.timer__btn {
+    flex: 1;
+    font-size: .85rem;
+    font-weight: 700;
+    color: rgba(0,0,0,.5);
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    padding: .45em 0;
+    margin-right: .5em;
+}
+
+.timer__btn:hover {
+    color: rgba(0,0,0,.85);
+}
+
+.timer__icon-wrench {
+    font-size: .85em;
+}
+
+/* timer settings */
+
+.timer__settings {
+    height: 274px;
+    position: relative;
+    top: -274px;
+    z-index: -1;
+    display: grid;
+    row-gap: 2em;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-items: center;
+    background: #f4f4f4;
+    border-radius: 20px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: top 500ms;
+}
+
+/*
+.timer__header {
+    display: inline;
+    background: #E0E0E0;
+    padding: .25em 0;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+*/
+.timer__inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 0 4em;
+    margin: 0 auto;
+}
+
+.timer__inputs div {
+    border-radius: 50px;
+    /* border: 1px solid black; */
+    /* margin-bottom: .75em; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer__inputs input {
+    border-radius: 100%;
+    outline: 0;
+    border: 2px solid #8447FF;
+    border: 0;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,.55);
+    width: 75px;
+    height: 75px;
+    font-size: 1.25rem;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.timer__inputs label {
+    order: 2;
+    font-size: .9rem;
+    /* text-transform: uppercase; */
+    /* font-weight: 700; */
+    /* letter-spacing: 2px; */
+    margin-top: .5em;
+}
+
+.timer__apply {
+    /* margin-top: 1rem; */
+    background-color: #8447FF;
+    color: #fff;
+    border: 0;
+    /* outline: 1; */
+    border-radius: 20px;
+    padding: .45em 1.15em;
+    /* box-shadow: 0px 0px 1px 0px rgba(0,0,0,.55); */
+    cursor: pointer;
+
+
+}
+
+.timer__apply:hover,
+.timer__apply:focus {
+    background: #A070FF;
+}
+
+.timer__apply:active {
+    background: #8447FF;
+}
+
+.modal__footer {
+    text-align: center;
+}
+
+.modal__save {
+    margin: 0 auto;
+}
+
+/* toggle moddal */
+
+.toggle {
+    top: 0;
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size: .85rem;
+    }
+}
