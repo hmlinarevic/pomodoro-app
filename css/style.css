@@ -3,6 +3,7 @@
 body {
     color: #333;
     background: #f8f9fa;
+    background: #333;
     font-size: 1rem;
     font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
@@ -111,14 +112,23 @@ timer
     background-color: #8447FF;
     color: #0C1B33;
     border-radius: 20px;
-    padding: 4rem 8rem;
+    /* padding: 4rem 8rem; */
     display: grid;
     grid-template-columns: 1fr;
     z-index: 2;
+    display: grid;
+    place-content: center;
 
 }
 
+.timer__header__inner {
+    /* width: 40%; */
+    margin: 0 auto;
+    /* border: 1px solid black; */
+}
+
 .timer__display {
+    text-align: center;
     font-size: 5rem;
     font-weight: 700;
     letter-spacing: 4px;
@@ -145,8 +155,12 @@ timer
     color: rgba(0,0,0,.85);
 }
 
-.timer__icon-wrench {
-    font-size: .85em;
+#stop-timer {
+    display: none;
+}
+
+.timer__icon {
+    font-size: 1em;
 }
 
 /* timer settings */
@@ -190,9 +204,7 @@ timer
 }
 
 .timer__inputs div {
-    border-radius: 50px;
     /* border: 1px solid black; */
-    /* margin-bottom: .75em; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -202,14 +214,12 @@ timer
 .timer__inputs input {
     border-radius: 100%;
     outline: 0;
-    border: 2px solid #8447FF;
-    border: 0;
+    border: 2px solid #D6C2FF;
     box-shadow: 0px 0px 2px 0px rgba(0,0,0,.55);
     width: 75px;
     height: 75px;
     font-size: 1.25rem;
     text-align: center;
-    -moz-appearance: textfield;
 }
 
 .timer__inputs label {
@@ -256,6 +266,20 @@ timer
 
 .toggle {
     top: 0;
+}
+
+/* input remove arrows */
+
+/* chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 @media (max-width: 800px) {
