@@ -1,4 +1,4 @@
-* { box-sizing: border-box; }
+*,*::before,*::after { box-sizing: border-box; }
 
 body {
     color: #333;
@@ -156,7 +156,7 @@ timer
 }
 
 #stop-timer {
-    /* display: none; */
+    display: none;
 }
 
 .timer__icon {
