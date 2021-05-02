@@ -1,33 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pomodoro | Timer</title>
+		<link
+			rel="shortcut icon"
+			href="./assets/timer-logo.svg"
+			type="image/x-icon"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<script type="module" src="./src/js/controller.js"></script>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="header__logo">
+					<img
+						class="header__logo--icon"
+						src="./assets/timer-logo.svg"
+						alt=""
+					/>
+					<span class="header__logo--text">pomodoro</span>
+				</div>
+			</div>
+		</header>
 
-<body>
-    <div class="wrapper">
-        <header class="header">
-            <a href="./index.html">
-                <img class="header__logo" src="./logo/pomodoro.png" alt="tomato with green leaves on top">
-            </a>
-        </header>
-        <article class="article">
-            <p class="article__body"><strong>Time management method</strong> developed by Francesco Cirillo. Break down your work into intervals, traditionally 25 minutes in length separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student.</p>
-        </article>
-        <div class="buttons">
-            <a class="btn btn-secondary" href="./timer.html">try pomodoro</a>
-            <a class="btn btn-primary" href="https://en.wikipedia.org/wiki/Pomodoro_Technique">more info</a>
-        </div>
-        <footer class="footer">
-            <p>pomodoro@2020</p>
-        </footer>
-    </div>
-</body>
+		<main class="main-content">
+			<div class="timer container container--flex">
+				<div class="timer__display">25:00</div>
+				<div class="timer__controls">
+					<button class="timer__button timer__button--start">
+						start timer
+					</button>
+				</div>
+			</div>
+		</main>
 
+		<footer class="footer">
+			<div class="container">
+				<h3 class="footer__title">About</h3>
+				<div class="footer__split-content">
+					<p class="footer__about">
+						Improve your daily focus and concetration by using this pomodoro
+						timer in your everyday tasks.
+					</p>
+					<p class="footer__about">
+						This time management techinque was originally developed by Francesco
+						Cirillo in the late 1980s.
+					</p>
+				</div>
+
+				<span class="footer__copyright"
+					>&copy; Copyright 2021
+					<span class="footer__logo">
+						<img class="footer__icon" src="./assets/timer-logo.svg" alt="" />
+						pomodoro</span
+					>
+				</span>
+				<!-- <nav class="nav">
+					<ul class="nav__list">
+						<li class="nav__item">
+							<a id="about" data-btn-type="about" href="#" class="nav__link"
+								>about</a
+							>
+						</li>
+						<li class="nav__item">
+							<a id="options" data-btn-type="options" href="#" class="nav__link"
+								>options</a
+							>
+						</li>
+					</ul>
+				</nav> -->
+			</div>
+		</footer>
+
+		<div class="modal hidden"></div>
+		<div class="overlay hidden"></div>
+	</body>
 </html>

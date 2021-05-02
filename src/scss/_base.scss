@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	height: calc(100vh - #{$header--height} - #{$footer--height});
+	font-family: Arial, Helvetica, sans-serif;
+	background: #f8f9fa;
+	color: #333;
+	margin: 0;
+}
+
+main {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+h2,
+p {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+}
