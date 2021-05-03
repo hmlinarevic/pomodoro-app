@@ -1,11 +1,15 @@
 class TimerButtonsView {
 	_parentElement = document.querySelector('.timer__buttons');
 
-	addHandler(controlsClick) {
+	addHandler(handleStart, handleOptions) {
 		this._parentElement.addEventListener('click', function (e) {
 			const btn = e.target.closest('.timer__button');
 			if (!btn) return;
-			controlsClick(btn.dataset.btnType);
+
+			const btnType = btn.dataset.btnType;
+
+			if (btnType === 'start focus') handleStart();
+			if (btnType === 'options') handleOptions();
 		});
 	}
 }

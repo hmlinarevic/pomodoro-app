@@ -1,8 +1,8 @@
 class TimerDisplayView {
 	_parentElement = document.querySelector('.timer__display');
 
-	render(secondsLeft) {
-		this._parentElement.innerHTML = secondsLeft;
+	render(seconds) {
+		this._parentElement.innerHTML = seconds;
 	}
 }
 

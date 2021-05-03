@@ -2,28 +2,25 @@ import * as model from './model.js';
 import modalView from './views/modalView.js';
 import overlayView from './views/overlayView.js';
 import timerDisplayView from './views/TimerDisplayView.js';
-import timerButtonsView from './views/timerButtonsView.js';
+import timerButtonsView from './views/TimerButtonsView.js';
 
-const controlTimerButtons = function (btnType) {
-	if (btnType === 'start focus') {
-		model.startTimer();
-		setInterval(() => {
-			if (model.state.timer.secondsRemaining) {
-				timerDisplayView.render(model.state.timer.secondsRemaining);
-			}
-		}, 1000);
-	}
-
-	if (btnType === 'options') {
-		overlayView.on();
-		modalView.renderOptions();
-	}
+const controlSecondsLeft = secondsLeft => {
+	timerDisplayView.render(secondsLeft);
 };
 
-const controlOverlayClick = function () {
+const controlStartClick = () => {
+	model.startTimer(controlSecondsLeft);
+};
+
+const controlOptionsClick = () => {
+	overlayView.on();
+	modalView.renderOptions();
+};
+
+const controlOverlayClick = () => {
 	modalView.hideModal();
 	overlayView.off();
 };
 
 overlayView.addHandler(controlOverlayClick);
-timerButtonsView.addHandler(controlTimerButtons);
+timerButtonsView.addHandler(controlStartClick, controlOptionsClick);

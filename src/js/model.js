@@ -1,24 +1,30 @@
+import { DEFAULT_SECONDS } from './config.js';
+
 export const state = {
 	timer: {
 		isOn: false,
-		secondsInterval: 5,
+		secondsInterval: DEFAULT_SECONDS,
+		switch() {
+			this.isOn = !this.isOn;
+		},
 	},
 };
 
-let { secondsInterval, sR } = state.timer;
-
-export const startTimer = () => {
+export const startTimer = handleTimeLeft => {
 	if (state.timer.isOn) return;
-	state.timer.isOn = true;
+	state.timer.switch();
+
+	let { secondsInterval, secondsLeft } = state.timer;
+	secondsLeft = secondsInterval;
+	handleTimeLeft(secondsLeft);
 
 	const interval = setInterval(() => {
-		sR = --secondsInterval;
-		state.timer.secondsRemaining = sR;
+		--secondsLeft;
+		handleTimeLeft(secondsLeft);
 
-		if (!sR) {
+		if (!secondsLeft) {
 			clearInterval(interval);
-			state.timer.isOn = false;
+			state.timer.switch();
 		}
-		console.log(sR);
 	}, 1000);
 };
