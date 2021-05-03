@@ -1,36 +1,34 @@
 class ModalView {
 	_parentElement = document.querySelector('.modal');
 
-	// addHandler(handleOverlayClick) {
-	// 	this._overlay.addEventListener('click', () => handleOverlayClick());
-	// }
-
 	showModal() {
 		this._parentElement.style.visibility = 'visible';
+		this._parentElement.style.opacity = '1';
 	}
 
 	hideModal() {
 		this._parentElement.style.visibility = 'hidden';
+		this._parentElement.style.opacity = '0';
 	}
 
 	_clear() {
 		this._parentElement.innerHTML = '';
 	}
 
-	renderAbout() {
-		this._clear();
-		this.showModal();
-		const markup = `
-			<h2>About</h2>
-			<p>
-				Improve your daily focus by using pomodoro timer in your everyday tasks
-			</p>
+	_generateOptionsMarkup() {
+		return `
+			<form class="timer__options">
+			<label for="focus interval">focus interval:</label>
+			<input type="number" id="focus interval" name="focus interval" min="5" max="100">
 		`;
-		this._parentElement.insertAdjacentHTML('afterbegin', markup);
 	}
 
 	renderOptions() {
-		return `<h2>this are options</h2>`;
+		console.log('hi');
+		this._clear();
+		this.showModal();
+		const markup = this._generateOptionsMarkup();
+		this._parentElement.insertAdjacentHTML('afterbegin', markup);
 	}
 }
 

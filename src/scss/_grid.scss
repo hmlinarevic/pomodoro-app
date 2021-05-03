@@ -1,0 +1,10 @@
+body {
+	height: 100vh;
+	background: #333;
+	display: grid;
+	grid-template-rows: 20rem minmax(50rem, 1fr) minmax(50rem, 1fr);
+	grid-template-areas:
+		'header'
+		'main'
+		'footer';
+}

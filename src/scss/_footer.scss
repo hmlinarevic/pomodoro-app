@@ -1,10 +1,8 @@
 .footer {
-	hr {
-	}
 	background: #333;
 	color: #f8f9fa;
 	@include flex-align-center;
-	height: $footer--height;
+	// height: $footer--height;
 	&__split-content {
 		// border: 1px solid white;
 		display: grid;
@@ -13,20 +11,25 @@
 		margin: 2rem 0;
 	}
 	&__title {
-		color: #30bced;
-		font-weight: 300;
+		color: #d7af70;
+		font-weight: 400;
 		grid-column: 1/-1;
 		font-size: 1.4rem;
 		text-transform: uppercase;
 		letter-spacing: 10px;
+		// font-family: Arial, Helvetica, sans-serif;
 	}
 	&__about {
 		font-weight: 300;
 		line-height: 1.5;
-		font-size: 1.8rem;
+		font-size: 2.6rem;
 	}
 	&__copyright {
+		display: block;
+		margin-top: 8rem;
+		font-weight: 300;
 		font-size: 1.6rem;
+		font-weight: 300;
 	}
 	&__logo {
 		font-family: 'Fredoka One', cursive;

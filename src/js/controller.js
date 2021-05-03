@@ -1,16 +1,22 @@
-import navView from './views/navView.js';
+import * as model from './model.js';
 import modalView from './views/modalView.js';
 import overlayView from './views/overlayView.js';
+import timerDisplayView from './views/TimerDisplayView.js';
+import timerButtonsView from './views/timerButtonsView.js';
 
-const controlNavButtons = function (btn) {
-	if (btn === 'options') {
-		overlayView.on();
-		modalView.renderOptions();
+const controlTimerButtons = function (btnType) {
+	if (btnType === 'start focus') {
+		model.startTimer();
+		setInterval(() => {
+			if (model.state.timer.secondsRemaining) {
+				timerDisplayView.render(model.state.timer.secondsRemaining);
+			}
+		}, 1000);
 	}
 
-	if (btn === 'about') {
+	if (btnType === 'options') {
 		overlayView.on();
-		modalView.renderAbout();
+		modalView.renderOptions();
 	}
 };
 
@@ -19,5 +25,5 @@ const controlOverlayClick = function () {
 	overlayView.off();
 };
 
-navView.addHandler(controlNavButtons);
 overlayView.addHandler(controlOverlayClick);
+timerButtonsView.addHandler(controlTimerButtons);
