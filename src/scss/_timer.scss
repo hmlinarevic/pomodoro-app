@@ -3,9 +3,10 @@
 	// color: #f8f9fa;
 	// border: 1px dashed #f8f9fa;
 	&__display {
-		height: 24rem;
+		position: relative;
 		width: 24rem;
-		border: 2px solid #d7af70;
+		height: 24rem;
+		// border: 2px solid #d7af70;
 		color: #d7af70;
 		border-radius: 100%;
 		display: grid;
@@ -14,6 +15,38 @@
 		letter-spacing: 2px;
 		// font-family: monospace;
 	}
+	&__circle {
+		fill: none;
+		stroke: none;
+	}
+	&__path-elapsed {
+		stroke-width: 2px;
+		stroke: #333;
+	}
+	&__path-remaining {
+		stroke-width: 2px;
+		stroke-linecap: round;
+		transform: rotate(90deg);
+		transform-origin: center;
+		transition: 1s linear all;
+		stroke: currentColor;
+		// stroke: #d7af70;
+	}
+	&__label {
+		position: absolute;
+		width: 24rem;
+		height: 24rem;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 24px;
+	}
+
+	&__svg {
+		transform: scaleX(-1);
+	}
+
 	&__buttons {
 		display: flex;
 		width: 290px;

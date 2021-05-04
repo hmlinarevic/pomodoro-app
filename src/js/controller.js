@@ -4,23 +4,27 @@ import overlayView from './views/overlayView.js';
 import timerDisplayView from './views/TimerDisplayView.js';
 import timerButtonsView from './views/TimerButtonsView.js';
 
-const controlSecondsLeft = secondsLeft => {
-	timerDisplayView.render(secondsLeft);
+const controlTimerData = data => {
+	timerDisplayView.render(data);
 };
 
 const controlStartClick = () => {
-	model.startTimer(controlSecondsLeft);
+	model.startTimer(controlTimerData);
 };
 
 const controlOptionsClick = () => {
 	overlayView.on();
-	modalView.renderOptions();
 };
 
 const controlOverlayClick = () => {
-	modalView.hideModal();
 	overlayView.off();
+	modalView.hideModal();
 };
 
-overlayView.addHandler(controlOverlayClick);
-timerButtonsView.addHandler(controlStartClick, controlOptionsClick);
+const init = () => {
+	timerDisplayView.render(undefined, model.state.timer.formatedInterval);
+	overlayView.addHandler(controlOverlayClick);
+	timerButtonsView.addHandler(controlStartClick, controlOptionsClick);
+};
+
+init();

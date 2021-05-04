@@ -111,15 +111,44 @@ a {
   border-radius: 25px;
 }
 .timer__display {
-  height: 24rem;
+  position: relative;
   width: 24rem;
-  border: 2px solid #d7af70;
+  height: 24rem;
   color: #d7af70;
   border-radius: 100%;
   display: grid;
   place-content: center;
   font-size: 3rem;
   letter-spacing: 2px;
+}
+.timer__circle {
+  fill: none;
+  stroke: none;
+}
+.timer__path-elapsed {
+  stroke-width: 2px;
+  stroke: #333;
+}
+.timer__path-remaining {
+  stroke-width: 2px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  stroke: currentColor;
+}
+.timer__label {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.timer__svg {
+  transform: scaleX(-1);
 }
 .timer__buttons {
   display: flex;
