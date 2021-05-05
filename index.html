@@ -3,12 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Pomodoro | Timer</title>
-		<link
-			rel="shortcut icon"
-			href="./assets/timer-logo.svg"
-			type="image/x-icon"
-		/>
+		<title>pomodoro</title>
+		<link rel="shortcut icon" href="./src/img/tomato.svg" type="image/x-icon" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
@@ -26,11 +22,7 @@
 		<header class="header">
 			<div class="container">
 				<div class="header__logo">
-					<img
-						class="header__logo--icon"
-						src="./assets/timer-logo.svg"
-						alt=""
-					/>
+					<img class="header__logo--icon" src="./src/img/tomato.svg" alt="" />
 					<span class="header__logo--text">pomodoro</span>
 				</div>
 			</div>
@@ -43,8 +35,6 @@
 						class="timer__svg"
 						viewBox="0 0 100 100"
 						xmlns="http://www.w3.org/2000/svg"
-						height="100%"
-						width="100%"
 					>
 						<g class="timer__circle">
 							<circle class="timer__path-elapsed" cx="50" cy="50" r="45" />
@@ -63,12 +53,9 @@
 					</svg>
 					<span class="timer__label"></span>
 				</div>
-
 				<div class="timer__buttons">
-					<button data-btn-type="start focus" class="timer__button">
-						start focus
-					</button>
-					<button data-btn-type="options" class="timer__button">options</button>
+					<button id="start" class="timer__button">start focus</button>
+					<button id="options" class="timer__button">options</button>
 				</div>
 			</div>
 		</main>
@@ -83,7 +70,7 @@
 				<span class="footer__copyright"
 					>&copy; Copyright 2021
 					<span class="footer__logo">
-						<img class="footer__icon" src="./assets/timer-logo.svg" alt="" />
+						<img class="footer__icon" src="./src/img/tomato.svg" alt="" />
 						pomodoro</span
 					>
 				</span>

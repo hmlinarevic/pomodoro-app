@@ -13,8 +13,20 @@ export const state = {
 		addCycle() {
 			++this.finishedCycles;
 		},
+		buttons: {
+			start: {
+				id: 'start',
+				text: 'start focus',
+			},
+			stop: {
+				id: 'stop',
+				text: 'stop',
+			},
+		},
 	},
 };
+
+let interval;
 
 export const startTimer = handleData => {
 	if (state.timer.isOn) return;
@@ -27,7 +39,7 @@ export const startTimer = handleData => {
 		strokeDasharray: calcStrokeDasharray(secondsInterval, secondsInterval),
 	});
 
-	const interval = setInterval(() => {
+	interval = setInterval(() => {
 		++secondsPassed;
 		secondsLeft = secondsInterval - secondsPassed;
 
@@ -40,7 +52,15 @@ export const startTimer = handleData => {
 			clearInterval(interval);
 			state.timer.switch();
 			state.timer.addCycle();
-			console.log(state.timer);
 		}
 	}, 1000);
+};
+
+export const stopTimer = handleData => {
+	clearInterval(interval);
+	state.timer.switch();
+	handleData({
+		timeLeft: formatTime(DEFAULT_INTERVAL),
+		strokeDasharray: calcStrokeDasharray(DEFAULT_INTERVAL, DEFAULT_INTERVAL),
+	});
 };

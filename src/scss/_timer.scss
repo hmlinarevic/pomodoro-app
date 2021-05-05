@@ -14,6 +14,11 @@
 		font-size: 3rem;
 		letter-spacing: 2px;
 		// font-family: monospace;
+		// fix chrome rendering svg
+		svg {
+			width: 100%;
+			height: 100%;
+		}
 	}
 	&__circle {
 		background: burlywood;
