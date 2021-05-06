@@ -39,4 +39,8 @@ const init = () => {
 
 init();
 
-console.log('Welcome to the applicaton..');
+console.log('hi');
+console.log('you there');
+console.log('hello');
+console.log('you');
+console.log('hi');

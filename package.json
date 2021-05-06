@@ -2,7 +2,7 @@
 	"name": "pomodoro",
 	"version": "1.0.0",
 	"description": "",
-	"default": "index.html",
+	"main": "index.html",
 	"scripts": {
 		"start": "parcel serve index.html",
 		"build": "parcel build index.html --dist-dir ./dist"
@@ -11,6 +11,7 @@
 		"type": "git",
 		"url": "git+https://github.com/hmlinarevic/pomodoro.git"
 	},
+	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"bugs": {
@@ -19,7 +20,6 @@
 	"homepage": "https://github.com/hmlinarevic/pomodoro#readme",
 	"devDependencies": {
 		"@parcel/transformer-sass": "^2.0.0-nightly.653",
-		"parcel": "^2.0.0-beta.1",
-		"sass": "^1.32.12"
+		"parcel": "^2.0.0-beta.1"
 	}
 }
