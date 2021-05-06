@@ -18,6 +18,7 @@
 	},
 	"homepage": "https://github.com/hmlinarevic/pomodoro#readme",
 	"devDependencies": {
-		"parcel": "^2.0.0-beta.2"
+		"parcel": "^2.0.0-beta.1",
+		"sass": "^1.32.12"
 	}
 }

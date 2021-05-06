@@ -38,3 +38,5 @@ const init = () => {
 };
 
 init();
+
+console.log('Welcome to the applicaton..');
