@@ -27,7 +27,10 @@ const controlOverlayClick = () => {
 	modalView.hideModal();
 };
 
-const init = () => {
+export const init = () => {
+	console.log('welcome to the application');
+	console.log('hope this works...');
+
 	timerDisplayView.render(undefined, model.state.timer.formatedInterval);
 	overlayView.addHandler(controlOverlayClick);
 	timerButtonsView.addHandler(
@@ -36,11 +39,3 @@ const init = () => {
 		controlOptionsClick
 	);
 };
-
-init();
-
-console.log('hi');
-console.log('you there');
-console.log('hello');
-console.log('you');
-console.log('hi');

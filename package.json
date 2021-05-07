@@ -2,10 +2,9 @@
 	"name": "pomodoro",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.html",
+	"private": true,
 	"scripts": {
-		"start": "parcel serve index.html",
-		"build": "parcel build index.html --dist-dir ./dist"
+		"build": "webpack"
 	},
 	"repository": {
 		"type": "git",
@@ -19,7 +18,9 @@
 	},
 	"homepage": "https://github.com/hmlinarevic/pomodoro#readme",
 	"devDependencies": {
-		"@parcel/transformer-sass": "^2.0.0-nightly.653",
-		"parcel": "^2.0.0-beta.1"
+		"css-loader": "^5.2.4",
+		"style-loader": "^2.0.0",
+		"webpack": "^5.36.2",
+		"webpack-cli": "^4.7.0"
 	}
 }
