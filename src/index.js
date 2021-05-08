@@ -1,4 +1,7 @@
+import * as app from './app/app';
 import { init } from './app/controller';
 import './style.css';
-console.log('waiting for js...');
+
+app.load();
+
 init();
