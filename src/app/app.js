@@ -9,6 +9,7 @@ export const load = () => {
 		const isTransitionDone = e.propertyName === 'opacity';
 		if (isTransitionDone) {
 			loader.style.display = 'none';
+			document.body.style.overflow = 'unset';
 		}
 	});
 
