@@ -1,7 +1,5 @@
-import * as app from './app/app';
-import { init } from './app/controller';
+import app from './app/app.js';
 import './style.css';
 
-app.load();
-
-init();
+app.loadScreen();
+app.initController();

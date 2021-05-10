@@ -1,0 +1,32 @@
+.loading-screen {
+	transition: opacity 500ms, visibility 500ms;
+	&__avatar {
+		width: 100px;
+		height: 100px;
+		border: 3px #30bced solid;
+		border-radius: 50%;
+		overflow: hidden;
+		animation: float 2s ease-in-out infinite;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #333;
+		transition: opacity 500ms, visibility 500ms;
+	}
+	&__img {
+		width: 60%;
+		height: auto;
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}

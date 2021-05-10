@@ -19,7 +19,7 @@
 				overflow: hidden;
 			}
 
-			.loader {
+			.loading-screen {
 				height: 100%;
 				position: fixed;
 				z-index: 80;
@@ -29,27 +29,31 @@
 				bottom: 0;
 				background: #111;
 				display: grid;
+				grid-template-rows: auto 50px;
+				row-gap: 5px;
 				place-content: center;
-				transition: all 1000ms;
-			}
-
-			.load-text {
-				color: #30bced;
-				font-size: 2rem;
-				transition: all 250ms;
+				place-items: center;
 			}
 
 			.hidden {
 				visibility: 0;
 				opacity: 0;
 			}
+
+			.visible {
+				visibility: 1;
+				opacity: 1;
+			}
 		</style>
 	</head>
 
 	<body>
-		<div class="loader">
-			<p class="load-text"></p>
+		<div class="loading-screen">
+			<div class="loading-screen__avatar hidden">
+				<img class="loading-screen__img" src="./assets/tomato.svg" alt="" />
+			</div>
 		</div>
+
 		<header class="header">
 			<div class="container">
 				<div class="header__logo">

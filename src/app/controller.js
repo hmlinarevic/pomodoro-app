@@ -28,7 +28,6 @@ const controlOverlayClick = () => {
 };
 
 export const init = () => {
-	console.log('initialzing from controller');
 	timerDisplayView.render(undefined, model.state.timer.formatedInterval);
 	overlayView.addHandler(controlOverlayClick);
 	timerButtonsView.addHandler(

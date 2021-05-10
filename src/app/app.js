@@ -1,28 +1,29 @@
-console.log('hi');
+import * as controller from './controller.js';
 
-export const load = () => {
-	const loader = document.querySelector('.loader');
-	const loadText = loader.querySelector('.load-text');
+class App {
+	_loadingScreen = document.querySelector('.loading-screen');
+	_loadingScreenAvatar = document.querySelector('.loading-screen__avatar');
 
-	loader.addEventListener('transitionend', e => {
-		console.log(e.propertyName);
-		const isTransitionDone = e.propertyName === 'opacity';
-		if (isTransitionDone) {
-			loader.style.display = 'none';
-			document.body.style.overflow = 'unset';
-		}
-	});
+	loadScreen() {
+		this._loadingScreenAvatar.classList.add('visible');
 
-	setTimeout(() => {
-		loadText.innerHTML = 'app loading...';
-	}, 250);
+		setTimeout(() => {
+			this._loadingScreenAvatar.classList.remove('visible');
+			this._loadingScreenAvatar.classList.add('hidden');
+		}, 2000);
 
-	setTimeout(() => {
-		loadText.innerHTML = 'app loaded';
-	}, 1250);
+		setTimeout(() => {
+			this._loadingScreen.classList.add('hidden');
+		}, 2500);
 
-	setTimeout(() => {
-		// loadText.innerHTML = 'have fun!';
-		loader.classList.add('hidden');
-	}, 2500);
-};
+		setTimeout(() => {
+			this._loadingScreen.style.display = 'none';
+		}, 3000);
+	}
+
+	initController() {
+		controller.init();
+	}
+}
+
+export default new App();
