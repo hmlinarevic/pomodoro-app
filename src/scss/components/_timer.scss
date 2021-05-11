@@ -1,28 +1,20 @@
 .timer {
-	border-radius: 25px;
-	// color: #f8f9fa;
-	// border: 1px dashed #f8f9fa;
+	@extend .container;
+	@include flex-align-center;
 	&__display {
-		position: relative;
-		width: 24rem;
-		height: 24rem;
-		// border: 2px solid #d7af70;
+		width: 30rem;
+		height: 30rem;
 		color: #d7af70;
-		border-radius: 100%;
 		display: grid;
-		place-content: center;
-		font-size: 3rem;
-		letter-spacing: 2px;
-		// font-family: monospace;
-		// fix chrome rendering svg
-		svg {
-			width: 100%;
-			height: 100%;
-		}
+		place-items: center;
+		margin-right: 6rem;
+	}
+	&__svg {
+		width: 100%;
+		height: 100%;
+		transform: scaleX(-1);
 	}
 	&__circle {
-		background: burlywood;
-		// color: red;
 		fill: none;
 		stroke: none;
 	}
@@ -31,54 +23,56 @@
 		stroke: #333;
 	}
 	&__path-remaining {
-		stroke-width: 2px;
+		stroke-width: 1px;
 		stroke-linecap: round;
 		transform: rotate(90deg);
 		transform-origin: center;
 		transition: 1s linear all;
 		stroke: currentColor;
-		// stroke: #d7af70;
 	}
 	&__label {
 		position: absolute;
-		width: 24rem;
-		height: 24rem;
-		top: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		font-size: 24px;
 	}
-
-	&__svg {
-		transform: scaleX(-1);
-	}
-
 	&__buttons {
+		height: 100%;
 		display: flex;
-		width: 290px;
+		flex-direction: column;
 		justify-content: space-between;
-		// display: flex;
-		// border: 1px dashed #f8f9fa;
+		align-items: center;
 	}
 	&__button {
 		background: none;
 		border: 2px solid #d7af70;
 		color: #d7af708c;
-		width: 140px;
+		width: 150px;
 		height: 60px;
-		// width: 100%;
-		display: block;
-		// padding: 0 4rem;
+		display: grid;
+		place-items: center;
 		font-family: inherit;
 		font-size: 1.8rem;
 		font-weight: 300;
 		cursor: pointer;
 		border-radius: 5px;
-		transition: border-color 250ms, color 250ms;
+		transition: border-color 500ms, color 500ms, fill 500ms;
+		fill: #d7af708c;
+		margin: 1rem 0;
+	}
+	&__button--icon {
+		// display: grid;
+		// place-items: center;
+		display: block;
+		width: 24px;
+		// height: 40%;
+		fill: inherit;
+	}
+	&__button--icon-stats {
+		// display: block;
+		// fill: inherit;
 	}
 	&__button:hover {
 		border-color: #30bced;
 		color: #30bced;
+		fill: #30bced;
 	}
 }

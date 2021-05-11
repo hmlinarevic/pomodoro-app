@@ -1,8 +1,8 @@
 .loading-screen {
 	transition: opacity 500ms, visibility 500ms;
 	&__avatar {
-		width: 100px;
-		height: 100px;
+		width: 80px;
+		height: 80px;
 		border: 3px #30bced solid;
 		border-radius: 50%;
 		overflow: hidden;

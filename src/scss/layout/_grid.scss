@@ -1,8 +1,8 @@
-body {
-	height: 100vh;
+.app {
+	min-height: 100vh;
 	background: #333;
 	display: grid;
-	grid-template-rows: 20rem minmax(50rem, 1fr) minmax(50rem, 1fr);
+	grid-template-rows: auto minmax(400px, 1fr) minmax(400px, 1fr);
 	grid-template-areas:
 		'header'
 		'main'

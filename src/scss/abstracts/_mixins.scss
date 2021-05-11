@@ -8,3 +8,10 @@
 	display: flex;
 	align-items: center;
 }
+
+@mixin flex($direction, $j-c, $a-i) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $j-c;
+	align-items: $a-i;
+}

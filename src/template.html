@@ -54,65 +54,126 @@
 			</div>
 		</div>
 
-		<header class="header">
-			<div class="container">
-				<div class="header__logo">
-					<img class="header__logo--icon" src="./assets/tomato.svg" alt="" />
-					<span class="header__logo--text">pomodoro</span>
+		<div class="app">
+			<header class="header">
+				<div class="container">
+					<div class="header__logo">
+						<img class="header__logo--icon" src="./assets/tomato.svg" alt="" />
+						<span class="header__logo--text">pomodoro</span>
+					</div>
 				</div>
-			</div>
-		</header>
+			</header>
 
-		<main class="main-content">
-			<div class="timer container container--flex">
-				<div class="timer__display">
-					<svg
-						class="timer__svg"
-						viewBox="0 0 100 100"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<g class="timer__circle">
-							<circle class="timer__path-elapsed" cx="50" cy="50" r="45" />
-							<path
-								id="timer-path-remaining"
-								stroke-dasharray="283"
-								class="timer__path-remaining path-remaining--color"
-								d="
-									M 50, 50
-									m -45, 0
-									a 45,45 0 1,0 90,0
-									a 45,45 0 1,0 -90,0
+			<main class="main-content">
+				<div class="timer">
+					<div class="timer__display">
+						<svg
+							class="timer__svg"
+							viewBox="0 0 100 100"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g class="timer__circle">
+								<circle class="timer__path-elapsed" cx="50" cy="50" r="45" />
+								<path
+									id="timer-path-remaining"
+									stroke-dasharray="283"
+									class="timer__path-remaining path-remaining--color"
+									d="
+										M 50, 50
+										m -45, 0
+										a 45,45 0 1,0 90,0
+										a 45,45 0 1,0 -90,0
+									"
+								></path>
+							</g>
+						</svg>
+						<span class="timer__label"></span>
+					</div>
+					<div class="timer__buttons">
+						<button id="start" class="timer__button">focus</button>
+						<button id="stats" class="timer__button">
+							<svg
+								class="timer__button--icon timer__button--icon-stats"
+								viewBox="0 0 280 200"
+								xmlns="http://www.w3.org/2000/svg"
+								xml:space="preserve"
+								style="
+									fill-rule: evenodd;
+									clip-rule: evenodd;
+									stroke-linejoin: round;
+									stroke-miterlimit: 2;
 								"
-							></path>
-						</g>
-					</svg>
-					<span class="timer__label"></span>
+							>
+								<path
+									d="M301 232h76v147h-76z"
+									transform="matrix(.92105 0 0 .81633 -277.237 -109.388)"
+								/>
+								<path
+									d="M301 232h76v147h-76z"
+									transform="matrix(.92105 0 0 1.36054 -172.237 -315.646)"
+								/>
+								<path
+									d="M301 232h76v147h-76z"
+									transform="matrix(.92105 0 0 1.08844 -67.237 -212.517)"
+								/>
+							</svg>
+						</button>
+						<button id="options" class="timer__button">
+							<svg
+								class="timer__button--icon timer__button--icon-options"
+								viewBox="0 0 280 70"
+								xmlns="http://www.w3.org/2000/svg"
+								xml:space="preserve"
+								style="
+									fill-rule: evenodd;
+									clip-rule: evenodd;
+									stroke-linejoin: round;
+									stroke-miterlimit: 2;
+								"
+							>
+								<circle
+									cx="316.5"
+									cy="180.5"
+									r="30"
+									transform="matrix(.98591 0 0 .98591 -277.042 -142.958)"
+								/>
+								<circle
+									cx="316.5"
+									cy="180.5"
+									r="30"
+									transform="matrix(.98591 0 0 .98591 -172.042 -142.958)"
+								/>
+								<circle
+									cx="316.5"
+									cy="180.5"
+									r="30"
+									transform="matrix(.98591 0 0 .98591 -67.042 -142.958)"
+								/>
+							</svg>
+						</button>
+					</div>
 				</div>
-				<div class="timer__buttons">
-					<button id="start" class="timer__button">start focus</button>
-					<button id="options" class="timer__button">options</button>
+			</main>
+
+			<footer class="footer">
+				<div class="container">
+					<h3 class="footer__title">About</h3>
+					<p class="footer__about">
+						Improve focus and concentration in your everyday tasks with this
+						pomodoro timer.
+					</p>
+					<span class="footer__copyright"
+						>&copy; Copyright 2021
+						<span class="footer__logo">
+							<img class="footer__icon" src="./assets/tomato.svg" alt="" />
+							pomodoro</span
+						>
+					</span>
 				</div>
-			</div>
-		</main>
+			</footer>
 
-		<footer class="footer">
-			<div class="container">
-				<h3 class="footer__title">About</h3>
-				<p class="footer__about">
-					Improve your focus and concentration in your everyday tasks with
-					pomodoro timer.
-				</p>
-				<span class="footer__copyright"
-					>&copy; Copyright 2021
-					<span class="footer__logo">
-						<img class="footer__icon" src="./assets/tomato.svg" alt="" />
-						pomodoro</span
-					>
-				</span>
-			</div>
-		</footer>
-
-		<div class="modal hidden"></div>
-		<div class="overlay hidden"></div>
+			<div class="modal hidden"></div>
+			<div class="overlay hidden"></div>
+		</div>
 	</body>
 </html>

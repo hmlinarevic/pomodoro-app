@@ -1,0 +1,17 @@
+.options,
+.statistic {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.options {
+	&__label {
+	}
+
+	&__input {
+		display: block;
+		min-width: 50px;
+		width: 100px;
+	}
+}

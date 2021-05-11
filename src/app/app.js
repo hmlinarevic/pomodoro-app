@@ -8,6 +8,10 @@ class App {
 	startController() {
 		controller.init();
 	}
+
+	openOptions() {
+		controller.controlOptionsClick();
+	}
 }
 
 export default new App();

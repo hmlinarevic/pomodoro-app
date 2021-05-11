@@ -19,8 +19,9 @@ const controlStopClick = () => {
 	timerButtonsView.updateMarkup(model.state.timer.isOn);
 };
 
-const controlOptionsClick = () => {
+export const controlOptionsClick = () => {
 	overlayView.on();
+	modalView.renderOptions();
 };
 
 const controlOverlayClick = () => {
@@ -39,7 +40,6 @@ export const init = () => {
 };
 
 // initial page load
-
 // TO DO
 // extract this to loadingView
 export const loadScreen = () => {

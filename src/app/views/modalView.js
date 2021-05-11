@@ -17,9 +17,15 @@ class ModalView {
 
 	_generateOptionsMarkup() {
 		return `
-			<form class="timer__options">
-			<label for="focus interval">focus interval:</label>
-			<input type="number" id="focus interval" name="focus interval" min="5" max="100">
+			<form class="options">
+				<label class="options__label" for="focus-interval">interval</label>
+				<input class="options__input" type="number" id="focus-interval" name="focus-interval" min="5" max="100">
+			</form>
+
+			<div class="statistics">
+				<p class="statistics__text">pomodoros</p>
+				<span class="statistics__number"></span>
+			</div>
 		`;
 	}
 
