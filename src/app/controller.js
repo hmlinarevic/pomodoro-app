@@ -4,6 +4,7 @@ import overlayView from './views/overlayView.js';
 import timerDisplayView from './views/TimerDisplayView.js';
 import timerButtonsView from './views/TimerButtonsView.js';
 
+// timer
 const controlTimerData = data => {
 	timerDisplayView.render(data);
 };
@@ -35,4 +36,29 @@ export const init = () => {
 		controlStopClick,
 		controlOptionsClick
 	);
+};
+
+// initial page load
+
+// TO DO
+// extract this to loadingView
+export const loadScreen = () => {
+	const loadingScreen = document.querySelector('.loading-screen');
+	const loadingScreenAvatar = document.querySelector('.loading-screen__avatar');
+
+	loadingScreenAvatar.classList.add('visible');
+
+	setTimeout(() => {
+		loadingScreenAvatar.classList.remove('visible');
+		loadingScreenAvatar.classList.add('hidden');
+	}, 2000);
+
+	setTimeout(() => {
+		loadingScreen.classList.add('hidden');
+	}, 2500);
+
+	setTimeout(() => {
+		loadingScreen.style.display = 'none';
+		document.body.style.overflow = 'unset';
+	}, 2750);
 };

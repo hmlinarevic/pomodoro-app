@@ -11,7 +11,7 @@
 		justify-content: center;
 		align-items: center;
 		background: #333;
-		transition: opacity 500ms, visibility 500ms;
+		transition: opacity 250ms, visibility 250ms;
 	}
 	&__img {
 		width: 60%;
@@ -21,12 +21,12 @@
 
 @keyframes float {
 	0% {
-		transform: translatey(0px);
+		transform: translateY(0px);
 	}
 	50% {
-		transform: translatey(-20px);
+		transform: translateY(-20px);
 	}
 	100% {
-		transform: translatey(0px);
+		transform: translateY(0px);
 	}
 }

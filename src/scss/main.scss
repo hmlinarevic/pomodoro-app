@@ -1,12 +1,14 @@
-@import './variables';
-@import './mixins';
-@import './containers';
-@import './grid';
-@import './reset';
-@import './header';
-@import './footer';
-@import './timer';
-@import './nav';
-@import './modal';
-@import './main-content';
-@import './loading';
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './base/reset';
+
+@import './layout/grid';
+@import './layout/header';
+@import './layout/navigation';
+@import './layout/main-content';
+@import './layout/footer';
+
+@import './components/loading-screen';
+@import './components/timer';
+@import './components/modal';
