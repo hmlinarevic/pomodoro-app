@@ -1,6 +1,7 @@
 import * as model from './model.js';
 import modalView from './views/modalView.js';
 import overlayView from './views/overlayView.js';
+import timerView from './views/TimerView.js';
 import timerDisplayView from './views/TimerDisplayView.js';
 import timerButtonsView from './views/TimerButtonsView.js';
 
@@ -22,11 +23,13 @@ const controlStopClick = () => {
 export const controlOptionsClick = () => {
 	overlayView.on();
 	modalView.renderOptions();
+	timerView.hideTimer();
 };
 
 const controlOverlayClick = () => {
 	overlayView.off();
 	modalView.hideModal();
+	timerView.showTimer();
 };
 
 export const init = () => {

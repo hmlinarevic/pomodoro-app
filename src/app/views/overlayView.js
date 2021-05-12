@@ -2,7 +2,9 @@ class OverlayView {
 	_parentElement = document.querySelector('.overlay');
 
 	addHandler(overlayClick) {
-		this._parentElement.addEventListener('click', () => overlayClick());
+		this._parentElement.addEventListener('click', e => {
+			overlayClick();
+		});
 	}
 
 	on() {

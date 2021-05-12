@@ -1,9 +1,11 @@
 .timer {
 	@extend .container;
 	@include flex-align-center;
+	transition: visibility 500ms, opacity 500ms;
 	&__display {
-		width: 30rem;
-		height: 30rem;
+		position: relative;
+		width: 28rem;
+		height: 28rem;
 		color: #d7af70;
 		display: grid;
 		place-items: center;
@@ -29,10 +31,12 @@
 		transform-origin: center;
 		transition: 1s linear all;
 		stroke: currentColor;
+		stroke: #d7af70;
+		paint-order: stroke;
 	}
-	&__label {
+	&__time-left {
 		position: absolute;
-		font-size: 24px;
+		font-size: 2.4rem;
 	}
 	&__buttons {
 		height: 100%;

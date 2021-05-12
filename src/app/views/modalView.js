@@ -1,5 +1,10 @@
 class ModalView {
 	_parentElement = document.querySelector('.modal');
+	constructor() {
+		this._parentElement.addEventListener('click', e => {
+			e.stopPropagation();
+		});
+	}
 
 	showModal() {
 		this._parentElement.style.visibility = 'visible';
@@ -17,15 +22,11 @@ class ModalView {
 
 	_generateOptionsMarkup() {
 		return `
-			<form class="options">
-				<label class="options__label" for="focus-interval">interval</label>
-				<input class="options__input" type="number" id="focus-interval" name="focus-interval" min="5" max="100">
+			<form class="modal__options">
+				<label class="modal__input-label" for="focus-interval">interval</label>
+				<input class="modal__input" type="number" id="focus-interval" name="focus-interval" min="5" max="100">
 			</form>
 
-			<div class="statistics">
-				<p class="statistics__text">pomodoros</p>
-				<span class="statistics__number"></span>
-			</div>
 		`;
 	}
 

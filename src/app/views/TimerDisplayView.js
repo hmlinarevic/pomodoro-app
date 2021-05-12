@@ -8,7 +8,7 @@ class TimerDisplayView {
 	}
 
 	_updateTimerLabel(time) {
-		this._parentElement.querySelector('.timer__label').innerHTML = time;
+		this._parentElement.querySelector('.timer__time-left').innerHTML = time;
 	}
 
 	render({ timeLeft, strokeDasharray } = {}, initialValue) {
