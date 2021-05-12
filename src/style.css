@@ -226,8 +226,7 @@ input[type=number] {
   fill: #30bced;
 }
 
-.overlay.hidden,
-.modal.hidden {
+.overlay.hidden {
   visibility: hidden;
   opacity: 0;
 }
@@ -245,30 +244,42 @@ input[type=number] {
   grid-template-rows: 210px minmax(400px, 1fr) minmax(400px, 1fr);
   place-content: center;
   place-items: center;
+  z-index: 100;
   transition: opacity 500ms, visibility 500ms;
   cursor: pointer;
+}
+
+.modal.hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .modal {
   grid-column: 1/-1;
   grid-row: 2/3;
   width: 40rem;
+  height: 20rem;
   background-color: #f3f3f3;
   border-radius: 10px;
-  padding: 5rem 6rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   transition: opacity 500ms, visibility 500ms;
   cursor: default;
 }
-.modal__options {
-  padding: 4rem;
+
+.modal__settings {
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-size: 2rem;
 }
+.modal__input-label {
+  grid-area: label;
+  margin-right: 3rem;
+}
 .modal__input {
-  width: 8rem;
+  grid-area: input;
+  width: 10rem;
   font-size: inherit;
   padding: 1rem;
   border-radius: 10px;

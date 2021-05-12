@@ -1,49 +1,36 @@
-.overlay.hidden,
 .modal.hidden {
 	visibility: hidden;
 	opacity: 0;
-}
-
-// move to separate component file
-.overlay {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.5);
-	backdrop-filter: blur(4px);
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 210px minmax(400px, 1fr) minmax(400px, 1fr);
-	place-content: center;
-	place-items: center;
-	// z-index: 100;
-	transition: opacity 500ms, visibility 500ms;
-	cursor: pointer;
 }
 
 .modal {
 	grid-column: 1/ -1;
 	grid-row: 2 / 3;
 	width: 40rem;
+	height: 20rem;
 	background-color: #f3f3f3;
 	border-radius: 10px;
-	padding: 5rem 6rem;
+	// padding: 5rem 6rem;
 	box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
 	transition: opacity 500ms, visibility 500ms;
 	cursor: default;
-	&__options {
-		padding: 4rem;
+}
+
+.modal {
+	&__settings {
+		height: 100%;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 		font-size: 2rem;
 	}
 	&__input-label {
+		grid-area: label;
+		margin-right: 3rem;
 	}
 	&__input {
-		width: 8rem;
+		grid-area: input;
+		width: 10rem;
 		font-size: inherit;
 		padding: 1rem;
 		border-radius: 10px;

@@ -1,0 +1,22 @@
+.overlay.hidden {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(4px);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 210px minmax(400px, 1fr) minmax(400px, 1fr);
+	place-content: center;
+	place-items: center;
+	z-index: 100;
+	transition: opacity 500ms, visibility 500ms;
+	cursor: pointer;
+}

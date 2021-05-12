@@ -22,7 +22,7 @@ const controlStopClick = () => {
 
 export const controlOptionsClick = () => {
 	overlayView.on();
-	modalView.renderOptions();
+	modalView.renderSettings();
 	timerView.hideTimer();
 };
 

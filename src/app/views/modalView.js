@@ -20,21 +20,26 @@ class ModalView {
 		this._parentElement.innerHTML = '';
 	}
 
-	_generateOptionsMarkup() {
+	_generateSettingsMarkup() {
 		return `
-			<form class="modal__options">
+			<form class="modal__settings">
 				<label class="modal__input-label" for="focus-interval">interval</label>
-				<input class="modal__input" type="number" id="focus-interval" name="focus-interval" min="5" max="100">
+				<input
+					class="modal__input"
+					type="number"
+					id="focus-interval"
+					name="focus-interval"
+					min="5" max="100">
 			</form>
 
 		`;
 	}
 
-	renderOptions() {
+	renderSettings() {
 		console.log('hi');
 		this._clear();
 		this.showModal();
-		const markup = this._generateOptionsMarkup();
+		const markup = this._generateSettingsMarkup();
 		this._parentElement.insertAdjacentHTML('afterbegin', markup);
 	}
 }
