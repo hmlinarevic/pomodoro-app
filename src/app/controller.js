@@ -10,14 +10,14 @@ const controlTimerData = data => {
 	timerDisplayView.render(data);
 };
 
-const controlStartClick = () => {
+const controlFocusClick = () => {
 	model.startTimer(controlTimerData);
-	timerButtonsView.updateMarkup(model.state.timer.isOn);
+	timerButtonsView.renderStopBtn(model.state.buttons);
 };
 
 const controlStopClick = () => {
 	model.stopTimer(controlTimerData);
-	timerButtonsView.updateMarkup(model.state.timer.isOn);
+	timerButtonsView.renderFocusBtn(model.state.buttons);
 };
 
 export const controlOptionsClick = () => {
@@ -33,10 +33,10 @@ const controlOverlayClick = () => {
 };
 
 export const init = () => {
-	timerDisplayView.render(undefined, model.state.timer.formatedInterval);
+	timerDisplayView.render(undefined, model.state.formatedInterval);
 	overlayView.addHandler(controlOverlayClick);
 	timerButtonsView.addHandler(
-		controlStartClick,
+		controlFocusClick,
 		controlStopClick,
 		controlOptionsClick
 	);

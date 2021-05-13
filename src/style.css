@@ -153,7 +153,7 @@ input[type=number] {
 .timer {
   display: flex;
   align-items: center;
-  transition: visibility 500ms, opacity 500ms;
+  transition: visibility 250ms, opacity 250ms;
 }
 .timer__display {
   position: relative;
@@ -165,8 +165,8 @@ input[type=number] {
   margin-right: 6rem;
 }
 .timer__svg {
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   transform: scaleX(-1);
 }
 .timer__circle {

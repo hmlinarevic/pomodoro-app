@@ -36,7 +36,6 @@ class ModalView {
 	}
 
 	renderSettings() {
-		console.log('hi');
 		this._clear();
 		this.showModal();
 		const markup = this._generateSettingsMarkup();
