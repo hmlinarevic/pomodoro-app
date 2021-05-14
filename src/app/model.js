@@ -5,21 +5,15 @@ export const state = {
 	secondsInterval: DEFAULT_INTERVAL,
 	formatedInterval: formatTime(DEFAULT_INTERVAL),
 
-	buttons: {
-		focus: {
+	btn: {
+		start: {
 			text: 'focus',
+			action: 'start-focus',
 		},
 		stop: {
 			text: 'stop',
+			action: 'stop-focus',
 		},
-	},
-	updateToActive() {
-		this.isActive = true;
-		this.buttons.focus.isActive = true;
-	},
-	updateToInactive() {
-		this.isActive = false;
-		this.buttons.focus.isActive = false;
 	},
 };
 

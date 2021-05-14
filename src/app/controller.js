@@ -11,13 +11,13 @@ const controlTimerData = data => {
 };
 
 const controlFocusClick = () => {
-	model.startTimer(controlTimerData);
-	timerButtonsView.renderStopBtn(model.state.buttons);
+	// model.startTimer(controlTimerData);
+	timerButtonsView.updateActionBtn(model.state.btn.stop);
 };
 
 const controlStopClick = () => {
-	model.stopTimer(controlTimerData);
-	timerButtonsView.renderFocusBtn(model.state.buttons);
+	// model.stopTimer(controlTimerData);
+	timerButtonsView.updateActionBtn(model.state.btn.start);
 };
 
 export const controlOptionsClick = () => {
