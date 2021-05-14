@@ -11,15 +11,15 @@ const controlTimerData = data => {
 
 const controlFocusClick = () => {
 	// model.startTimer(controlTimerData);
-	timerButtonsView.updateActionBtn(model.state.btn.stop);
+	timerButtonsView.updatePrimaryBtn(model.state.btn.stop);
 };
 
 const controlStopClick = () => {
 	// model.stopTimer(controlTimerData);
-	timerButtonsView.updateActionBtn(model.state.btn.start);
+	timerButtonsView.updatePrimaryBtn(model.state.btn.start);
 };
 
-export const controlOptionsClick = () => {
+export const controlSettingsClick = () => {
 	overlayView.on();
 	modalView.renderSettings();
 	timerView.hideTimer();
@@ -34,11 +34,11 @@ const controlOverlayClick = () => {
 export const init = () => {
 	timerDisplayView.render(undefined, model.state.formatedInterval);
 	overlayView.addHandler(controlOverlayClick);
-	timerButtonsView.addHandler(
+	timerButtonsView.addHandlers({
 		controlFocusClick,
 		controlStopClick,
-		controlOptionsClick
-	);
+		controlSettingsClick,
+	});
 };
 
 // initial page load

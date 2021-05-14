@@ -1,22 +1,31 @@
 class TimerButtonsView {
 	_parentElement = document.querySelector('.timer__buttons');
 
-	addHandler(handleFocus, handleStop, handleOptions) {
+	addHandlers(handlers) {
 		this._parentElement.addEventListener('click', e => {
 			const btn = e.target.closest('.timer__button');
 			if (!btn) return;
 
-			if (btn.dataset.action === 'start-focus') handleFocus();
-			else if (btn.dataset.action === 'stop-focus') handleStop();
-			else if (btn.dataset.action === 'options') handleOptions();
+			this.callHandlerOnAction(handlers, btn.dataset.action);
 		});
 	}
 
-	updateActionBtn(newState) {
-		const actionBtn = this._parentElement.querySelector('[data-action]');
-		actionBtn.textContent = newState.text;
-		actionBtn.dataset.action = newState.action;
-		console.log('btn state changed');
+	callHandlerOnAction(handlers, action) {
+		const {
+			controlFocusClick: focus,
+			controlSettingsClick: settings,
+			controlStopClick: stop,
+		} = handlers;
+
+		if (action === 'start-focus') focus();
+		if (action === 'stop-focus') stop();
+		if (action === 'open-settings') settings();
+	}
+
+	updatePrimaryBtn(newState) {
+		const primaryBtn = this._parentElement.querySelector('#primary');
+		primaryBtn.textContent = newState.text;
+		primaryBtn.dataset.action = newState.action;
 	}
 }
 
