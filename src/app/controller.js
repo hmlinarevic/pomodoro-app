@@ -5,7 +5,6 @@ import timerView from './views/TimerView.js';
 import timerDisplayView from './views/TimerDisplayView.js';
 import timerButtonsView from './views/TimerButtonsView.js';
 
-// timer
 const controlTimerData = data => {
 	timerDisplayView.render(data);
 };

@@ -16,6 +16,7 @@ class TimerButtonsView {
 		const actionBtn = this._parentElement.querySelector('[data-action]');
 		actionBtn.textContent = newState.text;
 		actionBtn.dataset.action = newState.action;
+		console.log('btn state changed');
 	}
 }
 
