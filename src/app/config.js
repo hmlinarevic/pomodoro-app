@@ -1,2 +1,2 @@
-export const INTERVAL_IN_SECONDS = 60;
-export const FULL_DASH_ARRAY = 283;
+export const USER_INTERVAL_IN_SECONDS = 60;
+export const FULL_DASHARRAY = 283;

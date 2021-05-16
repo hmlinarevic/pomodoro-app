@@ -1,9 +1,14 @@
-import { DEFAULT_INTERVAL } from './config.js';
-import { calcStrokeDasharray, formatTime } from './helpers.js';
+import { USER_INTERVAL_IN_SECONDS, FULL_DASHARRAY } from '../config.js';
+import { calcStrokeDasharray, formatTime } from '../helpers.js';
 
 export const state = {
-	secondsInterval: DEFAULT_INTERVAL,
-	formatedInterval: formatTime(DEFAULT_INTERVAL),
+	timerIsOn: false,
+	secondsTotal: USER_INTERVAL_IN_SECONDS,
+	secondsLeft: USER_INTERVAL_IN_SECONDS,
+	// formatedInterval: formatTime(DEFAULT_INTERVAL),
+
+	dasharrayTotal: FULL_DASHARRAY,
+	dasharrayLeft: FULL_DASHARRAY,
 
 	btn: {
 		start: {
@@ -17,22 +22,27 @@ export const state = {
 	},
 };
 
-let interval;
+const setStateSecondsLeft = () => {
+	let { secondsTotal, secondsPassed = 0, secondsLeft = 0 } = state;
+	++secondsPassed;
+	secondsLeft = secondsTotal - secondsPassed;
+	state.secondsLeft = secondsLeft;
+};
+
+const setStateTimerIsOn = () => (state.timerIsOn = !state.timerIsOn);
 
 export const startTimer = handleData => {
-	if (state.isActive) return;
-	state.updateToActive();
-
-	let { secondsInterval, secondsPassed = 0, secondsLeft = 0 } = state;
+	if (state.isTimerOn) return;
+	setStateTimerIsOn();
 
 	handleData({
-		timeLeft: formatTime(secondsInterval),
+		timeLeft: state.secondsLeft,
 		strokeDasharray: calcStrokeDasharray(secondsInterval, secondsInterval),
 	});
 
-	interval = setInterval(() => {
-		++secondsPassed;
-		secondsLeft = secondsInterval - secondsPassed;
+	state.interval = setInterval(() => {
+		setStateSecondsLeft();
+		// setStateFormatTimeLeft();
 
 		handleData({
 			timeLeft: formatTime(secondsLeft),
@@ -48,10 +58,13 @@ export const startTimer = handleData => {
 
 export const stopTimer = handleData => {
 	console.log('timer stopped');
-	clearInterval(interval);
+	clearInterval(state.interval);
 	state.updateToInactive();
 	handleData({
 		timeLeft: formatTime(DEFAULT_INTERVAL),
 		strokeDasharray: 283,
 	});
 };
+
+console.log(timer);
+// timer.start();

@@ -1,10 +1,10 @@
-import { FULL_DASH_ARRAY } from './config.js';
+import { FULL_DASHARRAY } from './config.js';
 
 export const calcStrokeDasharray = (timeLeft, timeInterval) => {
 	let rawTimeFraction = timeLeft / timeInterval;
 	rawTimeFraction =
 		rawTimeFraction - (1 / timeInterval) * (1 - rawTimeFraction);
-	return `${(rawTimeFraction * FULL_DASH_ARRAY).toFixed(0)} ${FULL_DASH_ARRAY}`;
+	return `${(rawTimeFraction * FULL_DASHARRAY).toFixed(0)} ${FULL_DASHARRAY}`;
 };
 
 export const formatTime = time => {

@@ -6,11 +6,11 @@ class TimerButtonsView {
 			const btn = e.target.closest('.timer__button');
 			if (!btn) return;
 
-			this.callHandlerOnAction(handlers, btn.dataset.action);
+			this._callHandlerOnAction(handlers, btn.dataset.action);
 		});
 	}
 
-	callHandlerOnAction(handlers, action) {
+	_callHandlerOnAction(handlers, action) {
 		const {
 			controlFocusClick: focus,
 			controlSettingsClick: settings,
