@@ -1,9 +1,8 @@
 import { FULL_DASHARRAY } from './config.js';
 
-export const calcStrokeDasharray = (timeLeft, timeInterval) => {
-	let rawTimeFraction = timeLeft / timeInterval;
-	rawTimeFraction =
-		rawTimeFraction - (1 / timeInterval) * (1 - rawTimeFraction);
+export const calcStrokeDasharray = (timeLeft, timeTotal) => {
+	let rawTimeFraction = timeLeft / timeTotal;
+	rawTimeFraction = rawTimeFraction - (1 / timeTotal) * (1 - rawTimeFraction);
 	return `${(rawTimeFraction * FULL_DASHARRAY).toFixed(0)} ${FULL_DASHARRAY}`;
 };
 

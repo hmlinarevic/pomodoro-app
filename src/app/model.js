@@ -1,14 +1,13 @@
-import { USER_INTERVAL_IN_SECONDS, FULL_DASHARRAY } from '../config.js';
-import { calcStrokeDasharray, formatTime } from '../helpers.js';
+import { USER_INTERVAL_IN_SECONDS, FULL_DASHARRAY } from './config.js';
+import { calcStrokeDasharray } from './helpers.js';
 
 export const state = {
 	timerIsOn: false,
 	secondsTotal: USER_INTERVAL_IN_SECONDS,
 	secondsLeft: USER_INTERVAL_IN_SECONDS,
-	// formatedInterval: formatTime(DEFAULT_INTERVAL),
+	secondsPassed: 0,
 
-	dasharrayTotal: FULL_DASHARRAY,
-	dasharrayLeft: FULL_DASHARRAY,
+	strokeDasharray: FULL_DASHARRAY,
 
 	btn: {
 		start: {
@@ -22,49 +21,47 @@ export const state = {
 	},
 };
 
-const setStateSecondsLeft = () => {
-	let { secondsTotal, secondsPassed = 0, secondsLeft = 0 } = state;
-	++secondsPassed;
-	secondsLeft = secondsTotal - secondsPassed;
-	state.secondsLeft = secondsLeft;
+class Timer {
+	_switch() {
+		state.timerIsOn = !state.timerIsOn;
+	}
+
+	receiveDataHandler(handler) {
+		this.dataHandler = handler;
+	}
+
+	start() {
+		if (state.timerIsOn) return;
+		this._switch();
+
+		const { secondsTotal } = state;
+		let { secondsPassed, secondsLeft, strokeDasharray } = state;
+
+		this.dataHandler({ secondsLeft, strokeDasharray });
+
+		this.interval = setInterval(() => {
+			++secondsPassed;
+			secondsLeft = secondsTotal - secondsPassed;
+			strokeDasharray = calcStrokeDasharray(secondsLeft, secondsTotal);
+
+			this.dataHandler({ secondsLeft, strokeDasharray });
+
+			if (!secondsLeft) this.stop();
+		}, 1000);
+	}
+
+	stop() {
+		console.log('timer stopped');
+		clearInterval(this.interval);
+		this._switch();
+	}
+}
+
+export const timer = new Timer();
+
+export const initialRenderValues = () => {
+	return {
+		secondsLeft: state.secondsLeft,
+		strokeDasharray: state.strokeDasharray,
+	};
 };
-
-const setStateTimerIsOn = () => (state.timerIsOn = !state.timerIsOn);
-
-export const startTimer = handleData => {
-	if (state.isTimerOn) return;
-	setStateTimerIsOn();
-
-	handleData({
-		timeLeft: state.secondsLeft,
-		strokeDasharray: calcStrokeDasharray(secondsInterval, secondsInterval),
-	});
-
-	state.interval = setInterval(() => {
-		setStateSecondsLeft();
-		// setStateFormatTimeLeft();
-
-		handleData({
-			timeLeft: formatTime(secondsLeft),
-			strokeDasharray: calcStrokeDasharray(secondsLeft, secondsInterval),
-		});
-
-		if (!secondsLeft) {
-			clearInterval(interval);
-			state.updateToInactive();
-		}
-	}, 1000);
-};
-
-export const stopTimer = handleData => {
-	console.log('timer stopped');
-	clearInterval(state.interval);
-	state.updateToInactive();
-	handleData({
-		timeLeft: formatTime(DEFAULT_INTERVAL),
-		strokeDasharray: 283,
-	});
-};
-
-console.log(timer);
-// timer.start();
