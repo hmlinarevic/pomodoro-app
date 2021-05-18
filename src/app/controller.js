@@ -33,7 +33,6 @@ const controlOverlayClick = () => {
 };
 
 const controlIntervalInput = inputValue => {
-	model.timer.stop();
 	model.updateUserInterval(inputValue);
 	modalView.hideModal();
 	timerView.showTimer();
