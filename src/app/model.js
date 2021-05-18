@@ -5,10 +5,7 @@ export const state = {
 	timerIsOn: false,
 	secondsTotal: USER_INTERVAL_IN_SECONDS,
 	secondsLeft: USER_INTERVAL_IN_SECONDS,
-	secondsPassed: 0,
-
 	strokeDasharray: FULL_DASHARRAY,
-
 	btn: {
 		start: {
 			text: 'focus',
@@ -25,43 +22,52 @@ class Timer {
 	_switch() {
 		state.timerIsOn = !state.timerIsOn;
 	}
-
 	receiveDataHandler(handler) {
 		this.dataHandler = handler;
 	}
-
 	start() {
 		if (state.timerIsOn) return;
 		this._switch();
 
 		const { secondsTotal } = state;
-		let { secondsPassed, secondsLeft, strokeDasharray } = state;
+		let { secondsPassed = 0, secondsLeft, strokeDasharray } = state;
 
-		this.dataHandler({ secondsLeft, strokeDasharray });
+		this.dataHandler({ time: secondsTotal, strokeDasharray });
 
 		this.interval = setInterval(() => {
 			++secondsPassed;
 			secondsLeft = secondsTotal - secondsPassed;
+
 			strokeDasharray = calcStrokeDasharray(secondsLeft, secondsTotal);
 
-			this.dataHandler({ secondsLeft, strokeDasharray });
+			this.dataHandler({ time: secondsLeft, strokeDasharray });
 
 			if (!secondsLeft) this.stop();
 		}, 1000);
 	}
-
 	stop() {
-		console.log('timer stopped');
 		clearInterval(this.interval);
+		this.dataHandler(getInitialValues());
 		this._switch();
 	}
 }
 
 export const timer = new Timer();
 
-export const initialRenderValues = () => {
+export const getRemainingValues = () => {
 	return {
-		secondsLeft: state.secondsLeft,
+		time: state.secondsLeft,
 		strokeDasharray: state.strokeDasharray,
 	};
+};
+
+export const getInitialValues = () => {
+	return {
+		time: state.secondsTotal,
+		strokeDasharray: state.strokeDasharray,
+	};
+};
+
+export const updateUserInterval = newValue => {
+	state.secondsTotal = newValue * 60;
 };

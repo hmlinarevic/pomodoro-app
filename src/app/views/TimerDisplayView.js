@@ -15,8 +15,9 @@ class TimerDisplayView {
 	}
 
 	render(data) {
-		this._updateTimerLabel(data.secondsLeft);
-		this._updateTimerPath(data.strokeDasharray);
+		const { time, strokeDasharray } = data;
+		this._updateTimerLabel(time);
+		this._updateTimerPath(strokeDasharray);
 	}
 }
 

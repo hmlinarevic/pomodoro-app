@@ -1,9 +1,9 @@
 import * as model from './model.js';
-import modalView from './views/modalView.js';
 import overlayView from './views/overlayView.js';
-import timerView from './views/TimerView.js';
-import timerDisplayView from './views/TimerDisplayView.js';
-import timerButtonsView from './views/TimerButtonsView.js';
+import modalView from './views/modalView.js';
+import timerView from './views/timerView.js';
+import timerDisplayView from './views/timerDisplayView.js';
+import timerButtonsView from './views/timerButtonsView.js';
 
 const controlTimerData = data => {
 	timerDisplayView.render(data);
@@ -20,7 +20,7 @@ const controlStopClick = () => {
 	timerButtonsView.updatePrimaryBtn(model.state.btn.start);
 };
 
-export const controlSettingsClick = () => {
+const controlSettingsClick = () => {
 	overlayView.on();
 	modalView.renderSettings();
 	timerView.hideTimer();
@@ -32,9 +32,20 @@ const controlOverlayClick = () => {
 	timerView.showTimer();
 };
 
+const controlIntervalInput = inputValue => {
+	model.timer.stop();
+	model.updateUserInterval(inputValue);
+	modalView.hideModal();
+	timerView.showTimer();
+	overlayView.off();
+	timerDisplayView.render(model.getInitialValues());
+};
+
 export const init = () => {
-	timerDisplayView.render(model.initialRenderValues());
 	overlayView.addHandler(controlOverlayClick);
+	modalView.preventBubbling();
+	modalView.addHandler(controlIntervalInput);
+	timerDisplayView.render(model.getInitialValues());
 	timerButtonsView.addHandlers({
 		controlFocusClick,
 		controlStopClick,

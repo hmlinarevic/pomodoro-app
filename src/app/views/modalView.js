@@ -1,9 +1,14 @@
 class ModalView {
 	_parentElement = document.querySelector('.modal');
-	constructor() {
+
+	preventBubbling() {
 		this._parentElement.addEventListener('click', e => {
 			e.stopPropagation();
 		});
+	}
+
+	addHandler(handler) {
+		this._submitHandler = handler;
 	}
 
 	showModal() {
@@ -35,11 +40,26 @@ class ModalView {
 		`;
 	}
 
+	_listenForSubmit() {
+		this._parentElement
+			.querySelector('.modal__settings')
+			.addEventListener('submit', e => {
+				this._onSubmitHandleValue(e);
+			});
+	}
+
+	_onSubmitHandleValue(e) {
+		e.preventDefault();
+		const inputValue = e.target.querySelector('.modal__input').value;
+		this._submitHandler(+inputValue);
+	}
+
 	renderSettings() {
 		this._clear();
 		this.showModal();
 		const markup = this._generateSettingsMarkup();
 		this._parentElement.insertAdjacentHTML('afterbegin', markup);
+		this._listenForSubmit();
 	}
 }
 
