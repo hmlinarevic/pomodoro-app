@@ -1,4 +1,5 @@
 import * as model from './model.js';
+import loadingView from './views/loadingView.js';
 import overlayView from './views/overlayView.js';
 import modalView from './views/modalView.js';
 import timerView from './views/timerView.js';
@@ -40,7 +41,8 @@ const controlIntervalInput = inputValue => {
 	timerDisplayView.render(model.getInitialValues());
 };
 
-export const init = () => {
+export const start = () => {
+	loadingView.on();
 	overlayView.addHandler(controlOverlayClick);
 	modalView.preventBubbling();
 	modalView.addHandler(controlIntervalInput);
@@ -50,28 +52,4 @@ export const init = () => {
 		controlStopClick,
 		controlSettingsClick,
 	});
-};
-
-// initial page load
-// TO DO
-// extract this to loadingView
-export const loadScreen = () => {
-	const loadingScreen = document.querySelector('.loading-screen');
-	const loadingScreenAvatar = document.querySelector('.loading-screen__avatar');
-
-	loadingScreenAvatar.classList.add('visible');
-
-	setTimeout(() => {
-		loadingScreenAvatar.classList.remove('visible');
-		loadingScreenAvatar.classList.add('hidden');
-	}, 2000);
-
-	setTimeout(() => {
-		loadingScreen.classList.add('hidden');
-	}, 2500);
-
-	setTimeout(() => {
-		loadingScreen.style.display = 'none';
-		document.body.style.overflow = 'unset';
-	}, 2750);
 };

@@ -1,4 +1,4 @@
-class Timer {
+class TimerView {
 	_parentElement = document.querySelector('.timer');
 
 	hideTimer() {
@@ -12,4 +12,4 @@ class Timer {
 	}
 }
 
-export default new Timer();
+export default new TimerView();
