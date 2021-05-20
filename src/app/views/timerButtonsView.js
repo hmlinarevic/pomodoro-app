@@ -13,12 +13,14 @@ class TimerButtonsView {
 	_callHandlerOnAction(handlers, action) {
 		const {
 			controlFocusClick: focus,
-			controlSettingsClick: settings,
 			controlStopClick: stop,
+			controlStatisticsClick: statistics,
+			controlSettingsClick: settings,
 		} = handlers;
 
 		if (action === 'start-focus') focus();
 		if (action === 'stop-focus') stop();
+		if (action === 'open-stats') statistics();
 		if (action === 'open-settings') settings();
 	}
 

@@ -266,7 +266,7 @@ input[type=number] {
   cursor: default;
 }
 
-.modal__settings {
+.modal__settings, .modal__statistics {
   height: 100%;
   display: flex;
   justify-content: center;

@@ -21,6 +21,12 @@ const controlStopClick = () => {
 	timerButtonsView.updatePrimaryBtn(model.state.btn.start);
 };
 
+const controlStatisticsClick = () => {
+	overlayView.on();
+	modalView.renderStatistics();
+	timerView.hideTimer();
+};
+
 const controlSettingsClick = () => {
 	overlayView.on();
 	modalView.renderSettings();
@@ -50,6 +56,7 @@ export const start = () => {
 	timerButtonsView.addHandlers({
 		controlFocusClick,
 		controlStopClick,
+		controlStatisticsClick,
 		controlSettingsClick,
 	});
 };

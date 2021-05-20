@@ -17,7 +17,8 @@
 }
 
 .modal {
-	&__settings {
+	&__settings,
+	&__statistics {
 		height: 100%;
 		display: flex;
 		justify-content: center;

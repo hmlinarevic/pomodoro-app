@@ -40,6 +40,14 @@ class ModalView {
 		`;
 	}
 
+	_generateStatisticsMarkup() {
+		return `
+			<div class="modal__statistics">
+				<p>pomodoros today: 0</p>
+			</div>
+		`;
+	}
+
 	_listenForSubmit() {
 		this._parentElement
 			.querySelector('.modal__settings')
@@ -60,6 +68,13 @@ class ModalView {
 		const markup = this._generateSettingsMarkup();
 		this._parentElement.insertAdjacentHTML('afterbegin', markup);
 		this._listenForSubmit();
+	}
+
+	renderStatistics() {
+		this._clear();
+		this.showModal();
+		const markup = this._generateStatisticsMarkup();
+		this._parentElement.insertAdjacentHTML('afterbegin', markup);
 	}
 }
 
