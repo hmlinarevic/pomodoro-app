@@ -16,6 +16,7 @@ export const state = {
 			action: 'stop-focus',
 		},
 	},
+	finishedPomodoros: 0,
 };
 
 class Timer {
@@ -42,13 +43,20 @@ class Timer {
 
 			this.dataHandler({ time: secondsLeft, strokeDasharray });
 
-			if (!secondsLeft) this.stop();
+			if (!secondsLeft) {
+				this.stop();
+				this.addPomodoro();
+			}
 		}, 1000);
 	}
 	stop() {
 		clearInterval(this.interval);
 		this.dataHandler(getInitialValues());
 		this._switch();
+	}
+
+	addPomodoro() {
+		++state.finishedPomodoros;
 	}
 }
 

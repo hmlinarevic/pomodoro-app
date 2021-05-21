@@ -40,10 +40,10 @@ class ModalView {
 		`;
 	}
 
-	_generateStatisticsMarkup() {
+	_generateStatisticsMarkup(pomodoros) {
 		return `
 			<div class="modal__statistics">
-				<p>pomodoros today: 0</p>
+				<p>pomodoros today: ${pomodoros}</p>
 			</div>
 		`;
 	}
@@ -70,10 +70,10 @@ class ModalView {
 		this._listenForSubmit();
 	}
 
-	renderStatistics() {
+	renderStatistics(pomodoros) {
 		this._clear();
 		this.showModal();
-		const markup = this._generateStatisticsMarkup();
+		const markup = this._generateStatisticsMarkup(pomodoros);
 		this._parentElement.insertAdjacentHTML('afterbegin', markup);
 	}
 }

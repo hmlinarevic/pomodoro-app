@@ -7,6 +7,9 @@ import timerDisplayView from './views/timerDisplayView.js';
 import timerButtonsView from './views/timerButtonsView.js';
 
 const controlTimerData = data => {
+	if (!data.time) {
+		timerButtonsView.updatePrimaryBtn(model.state.btn.start);
+	}
 	timerDisplayView.render(data);
 };
 
@@ -23,7 +26,7 @@ const controlStopClick = () => {
 
 const controlStatisticsClick = () => {
 	overlayView.on();
-	modalView.renderStatistics();
+	modalView.renderStatistics(model.state.finishedPomodoros);
 	timerView.hideTimer();
 };
 
