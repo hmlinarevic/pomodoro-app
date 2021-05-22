@@ -26,7 +26,7 @@ const controlStopClick = () => {
 
 const controlStatisticsClick = () => {
 	overlayView.on();
-	modalView.renderStatistics(model.state.finishedPomodoros);
+	modalView.renderStatistics(model.getPomodoros());
 	timerView.hideTimer();
 };
 

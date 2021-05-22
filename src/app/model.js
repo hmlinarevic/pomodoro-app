@@ -1,6 +1,10 @@
 import { USER_INTERVAL_IN_SECONDS, FULL_DASHARRAY } from './config.js';
 import { calcStrokeDasharray } from './helpers.js';
 
+export const getPomodoros = () => {
+	return localStorage.getItem('pomodoros');
+};
+
 export const state = {
 	timerIsOn: false,
 	secondsTotal: USER_INTERVAL_IN_SECONDS,
@@ -16,7 +20,7 @@ export const state = {
 			action: 'stop-focus',
 		},
 	},
-	finishedPomodoros: 0,
+	finishedPomodoros: getPomodoros(),
 };
 
 class Timer {
@@ -57,6 +61,7 @@ class Timer {
 
 	addPomodoro() {
 		++state.finishedPomodoros;
+		localStorage.setItem('pomodoros', state.finishedPomodoros);
 	}
 }
 
