@@ -55,7 +55,8 @@ export const start = () => {
 	overlayView.addHandler(controlOverlayClick);
 	modalView.preventBubbling();
 	modalView.addHandler(controlIntervalInput);
-	timerDisplayView.render(model.getInitialValues());
+	// timerDisplayView.render(model.getInitialValues());
+	timerDisplayView.renderMessage(model.state.displayMessage);
 	timerButtonsView.addHandlers({
 		controlFocusClick,
 		controlStopClick,

@@ -79,4 +79,12 @@
 		color: #30bced;
 		fill: #30bced;
 	}
+	&__message--small {
+		font-size: 1.6rem;
+		max-width: 14rem;
+		line-height: 1.6;
+		font-style: italic;
+		display: block;
+		color: #d7af708c;
+	}
 }

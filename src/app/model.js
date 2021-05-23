@@ -21,6 +21,7 @@ export const state = {
 		},
 	},
 	finishedPomodoros: getPomodoros(),
+	displayMessage: 'select interval',
 };
 
 class Timer {

@@ -14,6 +14,12 @@ class TimerDisplayView {
 			formatTime(time);
 	}
 
+	renderMessage(message) {
+		this._parentElement.querySelector(
+			'.timer__time-left'
+		).innerHTML = `<span class="timer__message--small">${message}</span>`;
+	}
+
 	render(data) {
 		const { time, strokeDasharray } = data;
 		this._updateTimerLabel(time);
