@@ -5,10 +5,17 @@ body {
 }
 
 .app {
+	background: #2e3532;
+	background: linear-gradient(
+		135deg,
+		rgba(46, 53, 50, 1) 0%,
+		rgba(28, 33, 31, 1) 100%
+	);
+	box-shadow: 0 0 5px 1px rgba(46, 53, 50, 1);
+
 	padding: 6rem;
 	width: 600px;
-	border: 10px solid #1f1f1f;
-	border-radius: 10px;
+	border-radius: 25px;
 	// min-height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;

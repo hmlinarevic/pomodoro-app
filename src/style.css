@@ -46,10 +46,12 @@ body {
 }
 
 .app {
+  background: #2e3532;
+  background: linear-gradient(135deg, #2e3532 0%, #1c211f 100%);
+  box-shadow: 0 0 5px 1px #2e3532;
   padding: 6rem;
   width: 600px;
-  border: 10px solid #1f1f1f;
-  border-radius: 10px;
+  border-radius: 25px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header" "main" "footer";
@@ -172,7 +174,7 @@ body {
 }
 .timer__path-elapsed {
   stroke-width: 2px;
-  stroke: #333;
+  stroke: #262c29;
 }
 .timer__path-remaining {
   stroke-width: 1px;
