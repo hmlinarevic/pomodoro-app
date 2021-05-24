@@ -4,13 +4,13 @@
 }
 
 .modal {
+	color: #333;
 	grid-column: 1/ -1;
 	grid-row: 2 / 3;
 	width: 40rem;
 	height: 20rem;
-	background-color: #f3f3f3;
+	background-color: #f8f9fa;
 	border-radius: 10px;
-	// padding: 5rem 6rem;
 	box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
 	transition: opacity 500ms, visibility 500ms;
 	cursor: default;
@@ -24,6 +24,9 @@
 		justify-content: center;
 		align-items: center;
 		font-size: 2rem;
+		p {
+			margin: 0;
+		}
 	}
 	&__input-label {
 		grid-area: label;

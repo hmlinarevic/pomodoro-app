@@ -43,7 +43,7 @@ class ModalView {
 	_generateStatisticsMarkup(pomodoros) {
 		return `
 			<div class="modal__statistics">
-				<p>pomodoros today: ${pomodoros}</p>
+				<p>total pomodoros: ${pomodoros}</p>
 			</div>
 		`;
 	}
