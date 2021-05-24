@@ -1,12 +1,22 @@
-.app {
-	min-height: 100vh;
-	background: #333;
+body {
 	display: grid;
-	grid-template-rows: auto 1.5fr 1fr;
+	place-content: center;
+	min-height: 100vh;
+}
+
+.app {
+	padding: 6rem;
+	width: 600px;
+	border: 10px solid #1f1f1f;
+	border-radius: 10px;
+	// min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
 		'header'
 		'main'
 		'footer';
+	margin: 0 auto;
 }
 
 .container {

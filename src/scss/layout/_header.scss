@@ -1,8 +1,6 @@
 .header {
-	background: #333;
 	color: #f8f9fa;
-	padding: 4rem 0;
-	@include flex-center;
+	margin-bottom: 4rem;
 	&__logo {
 		display: flex;
 		align-items: baseline;

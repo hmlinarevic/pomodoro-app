@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  background: #111;
   font-family: "Poppins", sans-serif;
   margin: 0;
 }
@@ -38,15 +39,24 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.app {
-  min-height: 100vh;
-  background: #333;
+body {
   display: grid;
-  grid-template-rows: auto 1.5fr 1fr;
-  grid-template-areas: "header" "main" "footer";
+  place-content: center;
+  min-height: 100vh;
 }
 
-.container, .timer {
+.app {
+  padding: 6rem;
+  width: 600px;
+  border: 10px solid #1f1f1f;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  margin: 0 auto;
+}
+
+.container {
   width: 500px;
   margin: 0 auto;
 }
@@ -58,12 +68,8 @@ input[type=number] {
 }
 
 .header {
-  background: #333;
   color: #f8f9fa;
-  padding: 4rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 4rem;
 }
 .header__logo {
   display: flex;
@@ -78,17 +84,8 @@ input[type=number] {
   font-size: 3rem;
 }
 
-.main-content {
-  background: #3d3d3d;
-  display: flex;
-  align-items: center;
-}
-
 .footer {
-  background: #333;
   color: #f8f9fa;
-  display: flex;
-  align-items: center;
 }
 .footer__title {
   color: #d7af70;
@@ -154,6 +151,7 @@ input[type=number] {
 .timer {
   display: flex;
   align-items: center;
+  margin-bottom: 4rem;
   transition: visibility 250ms, opacity 250ms;
 }
 .timer__display {
@@ -194,7 +192,7 @@ input[type=number] {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .timer__button {
