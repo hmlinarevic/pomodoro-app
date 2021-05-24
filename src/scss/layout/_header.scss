@@ -1,18 +1,18 @@
 .header {
 	background: #333;
 	color: #f8f9fa;
-	padding: 8rem 0;
+	padding: 4rem 0;
 	@include flex-center;
 	&__logo {
 		display: flex;
 		align-items: baseline;
 	}
 	&__logo--icon {
-		height: 4rem;
+		height: 3rem;
 		margin-right: 1rem;
 	}
 	&__logo--text {
 		font-family: 'Fredoka One', cursive;
-		font-size: 4rem;
+		font-size: 3rem;
 	}
 }

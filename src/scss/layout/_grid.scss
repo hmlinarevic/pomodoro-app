@@ -2,7 +2,7 @@
 	min-height: 100vh;
 	background: #333;
 	display: grid;
-	grid-template-rows: auto minmax(400px, 1fr) minmax(400px, 1fr);
+	grid-template-rows: auto 1.5fr 1fr;
 	grid-template-areas:
 		'header'
 		'main'
@@ -10,7 +10,7 @@
 }
 
 .container {
-	width: 600px;
+	width: 500px;
 	margin: 0 auto;
 }
 
