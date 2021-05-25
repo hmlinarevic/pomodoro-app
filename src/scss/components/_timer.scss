@@ -7,7 +7,7 @@
 	grid-template-columns: 1.3fr 1fr;
 	&__display {
 		position: relative;
-		color: #d7af70;
+		color: $color--components;
 		display: grid;
 		place-items: center;
 	}
@@ -22,7 +22,7 @@
 	}
 	&__path-elapsed {
 		stroke-width: 2px;
-		stroke: #262c29;
+		stroke: $color--component-path-elapsed;
 	}
 	&__path-remaining {
 		stroke-width: 1px;
@@ -31,7 +31,7 @@
 		transform-origin: center;
 		transition: 1s linear all;
 		stroke: currentColor;
-		stroke: #d7af70;
+		stroke: $color--components;
 		paint-order: stroke;
 	}
 	&__time-left {
@@ -48,8 +48,8 @@
 	}
 	&__button {
 		background: none;
-		border: 2px solid #d7af70;
-		color: #d7af708c;
+		border: 2px solid $color--components;
+		color: $color--components-lighter;
 		width: 100%;
 		height: 4.5rem;
 		display: grid;
@@ -60,7 +60,7 @@
 		cursor: pointer;
 		border-radius: 5px;
 		transition: border-color 500ms, color 500ms, fill 500ms;
-		fill: #d7af708c;
+		fill: $color--components-lighter;
 	}
 	&__button--icon {
 		// display: grid;
@@ -75,9 +75,9 @@
 		// fill: inherit;
 	}
 	&__button:hover {
-		border-color: #3083dc;
-		color: #30bced;
-		fill: #30bced;
+		border-color: $color--components-border;
+		color: $color--components-fill;
+		fill: $color--components-fill;
 	}
 	&__message--small {
 		font-size: 1.6rem;
@@ -85,6 +85,6 @@
 		line-height: 1.6;
 		// font-style: italic;
 		display: block;
-		color: #d7af708c;
+		color: $color--components-lighter;
 	}
 }

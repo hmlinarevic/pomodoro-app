@@ -2,13 +2,16 @@ body {
 	display: grid;
 	place-content: center;
 	min-height: 100vh;
+	background: $black--background;
+	color: $color--app-foreground;
 }
 
 .app {
 	width: 500px;
-	background: #2e3532;
-	border: 2px solid #f8f9fa;
-	box-shadow: 0 0 5px 1px rgba(46, 53, 50, 1);
+	background: $color--app-background;
+
+	border: 3px solid $color--app-foreground;
+	// box-shadow: 0 0 12px 2px rgb(255 255 255 / 20%);
 	padding: 6rem;
 	border-radius: 50px;
 	display: grid;
@@ -23,7 +26,7 @@ body {
 	// header
 
 	.header {
-		color: #f8f9fa;
+		color: inherit;
 		grid-area: header;
 		&__logo {
 			display: flex;
@@ -43,11 +46,11 @@ body {
 
 	.footer {
 		grid-area: footer;
-		color: #f8f9fa;
+		color: inherit;
 		display: grid;
 		grid-template-columns: 1.25fr 1fr;
 		&__title {
-			color: #d7af70;
+			color: #aec5eb81;
 			font-size: 1.2rem;
 			font-weight: 300;
 			letter-spacing: 8px;

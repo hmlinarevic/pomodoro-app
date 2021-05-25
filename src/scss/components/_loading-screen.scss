@@ -3,15 +3,14 @@
 	&__avatar {
 		width: 80px;
 		height: 80px;
-		border: 3px #f8f9fa solid;
+		border: 3px $color--app-foreground solid;
 		border-radius: 50%;
 		overflow: hidden;
 		animation: float 2s ease-in-out infinite;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: #333;
-		background: $app--background;
+		background: $color--app-background;
 		transition: opacity 250ms, visibility 250ms;
 	}
 	&__img {

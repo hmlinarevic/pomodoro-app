@@ -43,13 +43,14 @@ body {
   display: grid;
   place-content: center;
   min-height: 100vh;
+  background: #191919;
+  color: #fbe8da;
 }
 
 .app {
   width: 500px;
-  background: #2e3532;
-  border: 2px solid #f8f9fa;
-  box-shadow: 0 0 5px 1px #2e3532;
+  background: #3a405a;
+  border: 3px solid #fbe8da;
   padding: 6rem;
   border-radius: 50px;
   display: grid;
@@ -59,7 +60,7 @@ body {
   margin: 0 auto;
 }
 .app .header {
-  color: #f8f9fa;
+  color: inherit;
   grid-area: header;
 }
 .app .header__logo {
@@ -76,12 +77,12 @@ body {
 }
 .app .footer {
   grid-area: footer;
-  color: #f8f9fa;
+  color: inherit;
   display: grid;
   grid-template-columns: 1.25fr 1fr;
 }
 .app .footer__title {
-  color: #d7af70;
+  color: #aec5eb81;
   font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 8px;
@@ -117,15 +118,14 @@ body {
 .loading-screen__avatar {
   width: 80px;
   height: 80px;
-  border: 3px #f8f9fa solid;
+  border: 3px #fbe8da solid;
   border-radius: 50%;
   overflow: hidden;
   animation: float 2s ease-in-out infinite;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #333;
-  background: #2e3532;
+  background: #3a405a;
   transition: opacity 250ms, visibility 250ms;
 }
 .loading-screen__img {
@@ -155,7 +155,7 @@ body {
 }
 .timer__display {
   position: relative;
-  color: #d7af70;
+  color: #aec5eb81;
   display: grid;
   place-items: center;
 }
@@ -170,7 +170,7 @@ body {
 }
 .timer__path-elapsed {
   stroke-width: 2px;
-  stroke: #262c29;
+  stroke: #30354b;
 }
 .timer__path-remaining {
   stroke-width: 1px;
@@ -179,7 +179,7 @@ body {
   transform-origin: center;
   transition: 1s linear all;
   stroke: currentColor;
-  stroke: #d7af70;
+  stroke: #aec5eb81;
   paint-order: stroke;
 }
 .timer__time-left {
@@ -196,8 +196,8 @@ body {
 }
 .timer__button {
   background: none;
-  border: 2px solid #d7af70;
-  color: #d7af708c;
+  border: 2px solid #aec5eb81;
+  color: #aec5eb;
   width: 100%;
   height: 4.5rem;
   display: grid;
@@ -208,7 +208,7 @@ body {
   cursor: pointer;
   border-radius: 5px;
   transition: border-color 500ms, color 500ms, fill 500ms;
-  fill: #d7af708c;
+  fill: #aec5eb;
 }
 .timer__button--icon {
   display: block;
@@ -216,16 +216,16 @@ body {
   fill: inherit;
 }
 .timer__button:hover {
-  border-color: #3083dc;
-  color: #30bced;
-  fill: #30bced;
+  border-color: #aec5eb;
+  color: #fbe8da;
+  fill: #fbe8da;
 }
 .timer__message--small {
   font-size: 1.6rem;
   max-width: 14rem;
   line-height: 1.6;
   display: block;
-  color: #d7af708c;
+  color: #aec5eb;
 }
 
 .overlay.hidden {
