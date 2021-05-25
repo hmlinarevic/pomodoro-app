@@ -131,6 +131,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #2e3532;
   background: #333;
   transition: opacity 250ms, visibility 250ms;
 }

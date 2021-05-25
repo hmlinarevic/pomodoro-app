@@ -1,3 +1,5 @@
+import { statsIcon, settingsIcon } from '../icons.js';
+
 class TimerButtonsView {
 	_parentElement = document.querySelector('.timer__buttons');
 
@@ -28,6 +30,11 @@ class TimerButtonsView {
 		const primaryBtn = this._parentElement.querySelector('#primary');
 		primaryBtn.textContent = newState.text;
 		primaryBtn.dataset.action = newState.action;
+	}
+
+	insertIcons() {
+		this._parentElement.querySelector('#stats').innerHTML = statsIcon();
+		this._parentElement.querySelector('#settings').innerHTML = settingsIcon();
 	}
 }
 

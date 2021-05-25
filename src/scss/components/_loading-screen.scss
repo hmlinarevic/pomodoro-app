@@ -10,6 +10,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background: $app--background;
 		background: #333;
 		transition: opacity 250ms, visibility 250ms;
 	}
