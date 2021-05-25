@@ -44,27 +44,31 @@ body {
 	.footer {
 		grid-area: footer;
 		color: #f8f9fa;
+		display: grid;
+		grid-template-columns: 1.25fr 1fr;
 		&__title {
 			color: #d7af70;
 			font-size: 1.2rem;
-			font-weight: 400;
+			font-weight: 300;
 			letter-spacing: 8px;
 			text-transform: uppercase;
-			margin-bottom: 0.6rem;
+			margin-bottom: 0.4rem;
 		}
 		&__about {
 			font-weight: 300;
 			line-height: 1.5;
 			font-size: 2rem;
-			margin-bottom: 3rem;
 		}
 		&__copyright {
+			text-align: right;
+			align-self: flex-end;
 			display: block;
 			font-weight: 300;
 			font-size: 1.2rem;
 			font-weight: 300;
 		}
 		&__logo {
+			display: block;
 			font-family: 'Fredoka One', cursive;
 		}
 		&__icon {

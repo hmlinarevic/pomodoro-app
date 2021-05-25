@@ -3,8 +3,8 @@
 	@include flex-align-center;
 	transition: visibility 250ms, opacity 250ms;
 	display: grid;
-	column-gap: 2rem;
-	grid-template-columns: 1fr 1fr;
+	column-gap: 4rem;
+	grid-template-columns: 1.3fr 1fr;
 	&__display {
 		position: relative;
 		color: #d7af70;
@@ -39,8 +39,7 @@
 		font-size: 2.4rem;
 	}
 	&__buttons {
-		justify-self: end;
-		width: 90%;
+		width: 100%;
 		height: 80%;
 		display: flex;
 		flex-direction: column;
@@ -52,7 +51,7 @@
 		border: 2px solid #d7af70;
 		color: #d7af708c;
 		width: 100%;
-		height: 4rem;
+		height: 4.5rem;
 		display: grid;
 		place-items: center;
 		font-family: inherit;
@@ -76,7 +75,7 @@
 		// fill: inherit;
 	}
 	&__button:hover {
-		border-color: #30bced;
+		border-color: #3083dc;
 		color: #30bced;
 		fill: #30bced;
 	}
