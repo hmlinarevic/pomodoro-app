@@ -56,7 +56,7 @@ export const start = () => {
 	modalView.preventBubbling();
 	modalView.addHandler(controlIntervalInput);
 	// timerDisplayView.render(model.getInitialValues());
-	timerDisplayView.renderMessage(model.state.displayMessage);
+	// timerDisplayView.renderMessage(model.state.displayMessage);
 	timerButtonsView.insertIcons();
 	timerButtonsView.addHandlers({
 		controlFocusClick,

@@ -2,16 +2,27 @@ body {
 	display: grid;
 	place-content: center;
 	min-height: 100vh;
-	background: $black--background;
+	background: #333;
 	color: $color--app-foreground;
 }
 
 .app {
 	width: 500px;
-	background: $color--app-background;
+	// background: $color--app-background;
+	// background: #191919;
+	background: linear-gradient(
+		135deg,
+		#191919,
+		#191919,
+		#181818,
+		#171717,
+		#161616,
+		#151515,
+		#141414,
+		#141414
+	);
+	box-shadow: 0 0 2px 10px rgba(25, 25, 25, 0.75);
 
-	border: 3px solid $color--app-foreground;
-	// box-shadow: 0 0 12px 2px rgb(255 255 255 / 20%);
 	padding: 6rem;
 	border-radius: 50px;
 	display: grid;

@@ -36,7 +36,10 @@
 	}
 	&__time-left {
 		position: absolute;
-		font-size: 2.4rem;
+		font-size: 2rem;
+		font-weight: 400;
+		color: $color--components-lighter;
+		letter-spacing: 6px;
 	}
 	&__buttons {
 		width: 100%;
@@ -59,7 +62,8 @@
 		font-weight: 300;
 		cursor: pointer;
 		border-radius: 5px;
-		transition: border-color 500ms, color 500ms, fill 500ms;
+		transition: background-color 500ms, border-color 500ms, color 500ms,
+			fill 500ms;
 		fill: $color--components-lighter;
 	}
 	&__button--icon {
@@ -75,9 +79,10 @@
 		// fill: inherit;
 	}
 	&__button:hover {
-		border-color: $color--components-border;
-		color: $color--components-fill;
-		fill: $color--components-fill;
+		background-color: rgba(25, 25, 25, 0.05);
+		// border-color: $color--components-border;
+		// color: $color--components-fill;
+		// fill: $color--components-fill;
 	}
 	&__message--small {
 		font-size: 1.6rem;

@@ -43,14 +43,14 @@ body {
   display: grid;
   place-content: center;
   min-height: 100vh;
-  background: #191919;
-  color: #fbe8da;
+  background: #333;
+  color: #eee5e9;
 }
 
 .app {
   width: 500px;
-  background: #3a405a;
-  border: 3px solid #fbe8da;
+  background: linear-gradient(135deg, #191919, #191919, #181818, #171717, #161616, #151515, #141414, #141414);
+  box-shadow: 0 0 2px 10px rgba(25, 25, 25, 0.75);
   padding: 6rem;
   border-radius: 50px;
   display: grid;
@@ -118,14 +118,14 @@ body {
 .loading-screen__avatar {
   width: 80px;
   height: 80px;
-  border: 3px #fbe8da solid;
+  box-shadow: 0 0 1px 5px rgba(25, 25, 25, 0.5);
   border-radius: 50%;
   overflow: hidden;
   animation: float 2s ease-in-out infinite;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #3a405a;
+  background: #191919;
   transition: opacity 250ms, visibility 250ms;
 }
 .loading-screen__img {
@@ -155,7 +155,7 @@ body {
 }
 .timer__display {
   position: relative;
-  color: #aec5eb81;
+  color: #3f88c5;
   display: grid;
   place-items: center;
 }
@@ -179,12 +179,15 @@ body {
   transform-origin: center;
   transition: 1s linear all;
   stroke: currentColor;
-  stroke: #aec5eb81;
+  stroke: #3f88c5;
   paint-order: stroke;
 }
 .timer__time-left {
   position: absolute;
-  font-size: 2.4rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #eee5e9;
+  letter-spacing: 6px;
 }
 .timer__buttons {
   width: 100%;
@@ -196,8 +199,8 @@ body {
 }
 .timer__button {
   background: none;
-  border: 2px solid #aec5eb81;
-  color: #aec5eb;
+  border: 2px solid #3f88c5;
+  color: #eee5e9;
   width: 100%;
   height: 4.5rem;
   display: grid;
@@ -207,8 +210,8 @@ body {
   font-weight: 300;
   cursor: pointer;
   border-radius: 5px;
-  transition: border-color 500ms, color 500ms, fill 500ms;
-  fill: #aec5eb;
+  transition: background-color 500ms, border-color 500ms, color 500ms, fill 500ms;
+  fill: #eee5e9;
 }
 .timer__button--icon {
   display: block;
@@ -216,16 +219,14 @@ body {
   fill: inherit;
 }
 .timer__button:hover {
-  border-color: #aec5eb;
-  color: #fbe8da;
-  fill: #fbe8da;
+  background-color: rgba(25, 25, 25, 0.05);
 }
 .timer__message--small {
   font-size: 1.6rem;
   max-width: 14rem;
   line-height: 1.6;
   display: block;
-  color: #aec5eb;
+  color: #eee5e9;
 }
 
 .overlay.hidden {
