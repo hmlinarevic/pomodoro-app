@@ -1,13 +1,15 @@
 .timer {
+	grid-area: timer;
 	@include flex-align-center;
-	margin-bottom: 4rem;
 	transition: visibility 250ms, opacity 250ms;
+	display: grid;
+	column-gap: 2rem;
+	grid-template-columns: 1fr 1fr;
 	&__display {
 		position: relative;
 		color: #d7af70;
 		display: grid;
 		place-items: center;
-		margin-right: 6rem;
 	}
 	&__svg {
 		width: 110%;
@@ -37,18 +39,20 @@
 		font-size: 2.4rem;
 	}
 	&__buttons {
-		height: 100%;
+		justify-self: end;
+		width: 90%;
+		height: 80%;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 	}
 	&__button {
 		background: none;
 		border: 2px solid #d7af70;
 		color: #d7af708c;
-		width: 150px;
-		height: 60px;
+		width: 100%;
+		height: 4rem;
 		display: grid;
 		place-items: center;
 		font-family: inherit;
@@ -58,7 +62,6 @@
 		border-radius: 5px;
 		transition: border-color 500ms, color 500ms, fill 500ms;
 		fill: #d7af708c;
-		margin: 1rem 0;
 	}
 	&__button--icon {
 		// display: grid;

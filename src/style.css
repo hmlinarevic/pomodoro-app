@@ -46,50 +46,39 @@ body {
 }
 
 .app {
+  width: 500px;
   background: #2e3532;
-  background: linear-gradient(135deg, #2e3532 0%, #1c211f 100%);
+  border: 2px solid #f8f9fa;
   box-shadow: 0 0 5px 1px #2e3532;
   padding: 6rem;
-  width: 600px;
-  border-radius: 25px;
+  border-radius: 50px;
   display: grid;
+  row-gap: 4rem;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: "header" "timer" "footer";
   margin: 0 auto;
 }
-
-.container {
-  width: 500px;
-  margin: 0 auto;
-}
-
-.container--flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header {
+.app .header {
   color: #f8f9fa;
-  margin-bottom: 4rem;
+  grid-area: header;
 }
-.header__logo {
+.app .header__logo {
   display: flex;
   align-items: baseline;
 }
-.header__logo--icon {
-  height: 3rem;
+.app .header__logo--icon {
+  height: 4rem;
   margin-right: 1rem;
 }
-.header__logo--text {
+.app .header__logo--text {
   font-family: "Fredoka One", cursive;
-  font-size: 3rem;
+  font-size: 4em;
 }
-
-.footer {
+.app .footer {
+  grid-area: footer;
   color: #f8f9fa;
 }
-.footer__title {
+.app .footer__title {
   color: #d7af70;
   font-size: 1.2rem;
   font-weight: 400;
@@ -97,22 +86,22 @@ body {
   text-transform: uppercase;
   margin-bottom: 0.6rem;
 }
-.footer__about {
+.app .footer__about {
   font-weight: 300;
   line-height: 1.5;
   font-size: 2rem;
   margin-bottom: 3rem;
 }
-.footer__copyright {
+.app .footer__copyright {
   display: block;
   font-weight: 300;
   font-size: 1.2rem;
   font-weight: 300;
 }
-.footer__logo {
+.app .footer__logo {
   font-family: "Fredoka One", cursive;
 }
-.footer__icon {
+.app .footer__icon {
   display: inline-block;
   width: 2rem;
   margin: 0 0.25rem;
@@ -124,15 +113,15 @@ body {
 .loading-screen__avatar {
   width: 80px;
   height: 80px;
-  border: 3px #30bced solid;
+  border: 3px #f8f9fa solid;
   border-radius: 50%;
   overflow: hidden;
   animation: float 2s ease-in-out infinite;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #2e3532;
   background: #333;
+  background: #2e3532;
   transition: opacity 250ms, visibility 250ms;
 }
 .loading-screen__img {
@@ -152,17 +141,19 @@ body {
   }
 }
 .timer {
+  grid-area: timer;
   display: flex;
   align-items: center;
-  margin-bottom: 4rem;
   transition: visibility 250ms, opacity 250ms;
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
 }
 .timer__display {
   position: relative;
   color: #d7af70;
   display: grid;
   place-items: center;
-  margin-right: 6rem;
 }
 .timer__svg {
   width: 110%;
@@ -192,18 +183,20 @@ body {
   font-size: 2.4rem;
 }
 .timer__buttons {
-  height: 100%;
+  justify-self: end;
+  width: 90%;
+  height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .timer__button {
   background: none;
   border: 2px solid #d7af70;
   color: #d7af708c;
-  width: 150px;
-  height: 60px;
+  width: 100%;
+  height: 4rem;
   display: grid;
   place-items: center;
   font-family: inherit;
@@ -213,7 +206,6 @@ body {
   border-radius: 5px;
   transition: border-color 500ms, color 500ms, fill 500ms;
   fill: #d7af708c;
-  margin: 1rem 0;
 }
 .timer__button--icon {
   display: block;
