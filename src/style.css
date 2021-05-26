@@ -44,15 +44,15 @@ body {
   place-content: center;
   min-height: 100vh;
   background: #333;
-  color: #eee5e9;
+  color: #f8f9fa;
 }
 
 .app {
   width: 500px;
-  background: linear-gradient(135deg, #191919, #191919, #181818, #171717, #161616, #151515, #141414, #141414);
-  box-shadow: 0 0 2px 10px rgba(25, 25, 25, 0.75);
+  background: #212121;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
   padding: 6rem;
-  border-radius: 50px;
+  border-radius: 25px;
   display: grid;
   row-gap: 4rem;
   grid-template-rows: auto 1fr auto;
@@ -82,7 +82,7 @@ body {
   grid-template-columns: 1.25fr 1fr;
 }
 .app .footer__title {
-  color: #aec5eb81;
+  color: #d2d7df;
   font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 8px;
@@ -118,14 +118,14 @@ body {
 .loading-screen__avatar {
   width: 80px;
   height: 80px;
-  box-shadow: 0 0 1px 5px rgba(25, 25, 25, 0.5);
+  border: 3px solid #ffd23f;
   border-radius: 50%;
   overflow: hidden;
   animation: float 2s ease-in-out infinite;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #191919;
+  background: #212121;
   transition: opacity 250ms, visibility 250ms;
 }
 .loading-screen__img {
@@ -155,7 +155,7 @@ body {
 }
 .timer__display {
   position: relative;
-  color: #3f88c5;
+  color: #ffd95c;
   display: grid;
   place-items: center;
 }
@@ -170,7 +170,6 @@ body {
 }
 .timer__path-elapsed {
   stroke-width: 2px;
-  stroke: #30354b;
 }
 .timer__path-remaining {
   stroke-width: 1px;
@@ -178,15 +177,14 @@ body {
   transform: rotate(90deg);
   transform-origin: center;
   transition: 1s linear all;
-  stroke: currentColor;
-  stroke: #3f88c5;
+  stroke: #ffd95c;
   paint-order: stroke;
 }
 .timer__time-left {
   position: absolute;
   font-size: 2rem;
   font-weight: 400;
-  color: #eee5e9;
+  color: #f8f9fa;
   letter-spacing: 6px;
 }
 .timer__buttons {
@@ -199,8 +197,8 @@ body {
 }
 .timer__button {
   background: none;
-  border: 2px solid #3f88c5;
-  color: #eee5e9;
+  border: 2px solid #ffd95c;
+  color: #f8f9fa;
   width: 100%;
   height: 4.5rem;
   display: grid;
@@ -210,23 +208,28 @@ body {
   font-weight: 300;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 500ms, border-color 500ms, color 500ms, fill 500ms;
-  fill: #eee5e9;
+  transition: background-color 500ms, border-color 500ms;
+  fill: #f8f9fa;
 }
 .timer__button--icon {
   display: block;
   width: 2.4rem;
   fill: inherit;
 }
+.timer__button--icon-options {
+  width: 2rem;
+}
 .timer__button:hover {
-  background-color: rgba(25, 25, 25, 0.05);
+  border-color: #2191fb;
+  color: #73bafc;
+  fill: #73bafc;
 }
 .timer__message--small {
   font-size: 1.6rem;
   max-width: 14rem;
   line-height: 1.6;
   display: block;
-  color: #eee5e9;
+  color: #f8f9fa;
 }
 
 .overlay.hidden {
@@ -241,7 +244,6 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 210px minmax(400px, 1fr) minmax(400px, 1fr);

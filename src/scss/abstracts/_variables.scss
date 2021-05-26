@@ -1,4 +1,5 @@
 // colors
+
 $app--background: #2e3532;
 $app--border: #e8e1ef;
 $btn--highlight: #30bced;
@@ -6,13 +7,15 @@ $btn--highlight: #30bced;
 $header--height: 20rem;
 $footer--height: 40rem;
 
-$black--background: #333;
-$color--app-background: #191919;
-$color--components: #3f88c5;
-$color--components-lighter: #eee5e9;
+// dark
 
-$color--components-border: #9eadc8;
-$color--components-fill: #00a7e1;
+$black--background: #333;
+$color--app-background: #212121;
+$color--components: #ffd95c;
+$color--components-lighter: #f8f9fa;
+
+$color--components-border: #2191fb;
+$color--components-fill: #73bafc;
 
 $color--component-path-elapsed: #30354b;
-$color--app-foreground: #eee5e9;
+$color--app-foreground: #f8f9fa;

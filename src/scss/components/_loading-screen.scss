@@ -3,7 +3,7 @@
 	&__avatar {
 		width: 80px;
 		height: 80px;
-		box-shadow: 0 0 1px 5px rgba(25, 25, 25, 0.5);
+		border: 3px solid #ffd23f;
 		border-radius: 50%;
 		overflow: hidden;
 		animation: float 2s ease-in-out infinite;
