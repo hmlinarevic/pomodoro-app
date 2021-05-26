@@ -56,7 +56,7 @@ body {
   border-radius: 25px;
   display: grid;
   row-gap: 3rem;
-  grid-template-rows: 8rem 1fr 14rem;
+  grid-template-rows: 8rem 1fr 13rem;
   grid-template-areas: "header" "timer" "footer";
   margin: 0 auto;
 }
@@ -81,6 +81,7 @@ body {
   color: inherit;
   display: grid;
   grid-template-columns: 1.25fr 1fr;
+  place-items: end;
 }
 .app .footer__title {
   color: #d2d7df;
@@ -253,8 +254,9 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(4px);
   display: grid;
+  row-gap: 3rem;
   grid-template-columns: 1fr;
-  grid-template-rows: 8rem 1fr 14rem;
+  grid-template-rows: 8rem 1fr 13rem;
   place-items: center;
   grid-template-areas: "." "modal" ".";
   z-index: 100;
@@ -273,7 +275,7 @@ body {
   color: #333;
   grid-area: modal;
   width: 100%;
-  height: 80%;
+  height: 100%;
   background-color: #f8f9fa;
   border-radius: 10px;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);

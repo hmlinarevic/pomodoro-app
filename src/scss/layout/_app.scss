@@ -15,7 +15,7 @@ body {
 	border-radius: 25px;
 	display: grid;
 	row-gap: 3rem;
-	grid-template-rows: 8rem 1fr 14rem;
+	grid-template-rows: 8rem 1fr 13rem;
 	grid-template-areas:
 		'header'
 		'timer'
@@ -48,6 +48,7 @@ body {
 		color: inherit;
 		display: grid;
 		grid-template-columns: 1.25fr 1fr;
+		place-items: end;
 		&__title {
 			color: #d2d7df;
 			font-size: 1.2rem;
