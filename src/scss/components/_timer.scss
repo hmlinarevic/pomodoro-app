@@ -23,6 +23,7 @@
 	&__path-elapsed {
 		stroke-width: 2px;
 		// stroke: $color--component-path-elapsed;
+		stroke: #292929;
 	}
 	&__path-remaining {
 		stroke-width: 1px;
@@ -34,6 +35,8 @@
 		paint-order: stroke;
 	}
 	&__time-left {
+		font-family: 'Knewave', cursive;
+
 		position: absolute;
 		font-size: 2rem;
 		font-weight: 400;
@@ -94,4 +97,8 @@
 		display: block;
 		color: $color--components-lighter;
 	}
+}
+
+#primary {
+	font-family: monospace;
 }

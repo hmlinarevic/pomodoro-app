@@ -10,7 +10,7 @@ html {
 
 body {
   background: #111;
-  font-family: "Poppins", sans-serif;
+  font-family: monospace;
   margin: 0;
 }
 
@@ -43,13 +43,13 @@ body {
   display: grid;
   place-content: center;
   min-height: 100vh;
-  background: #333;
+  background: #212121;
   color: #f8f9fa;
 }
 
 .app {
   width: 500px;
-  background: #212121;
+  background: #333;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
   padding: 6rem;
   border-radius: 25px;
@@ -72,8 +72,8 @@ body {
   margin-right: 1rem;
 }
 .app .header__logo--text {
-  font-family: "Fredoka One", cursive;
-  font-size: 4em;
+  font-family: "Knewave", cursive;
+  font-size: 5rem;
 }
 .app .footer {
   grid-area: footer;
@@ -92,7 +92,7 @@ body {
 .app .footer__about {
   font-weight: 300;
   line-height: 1.5;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 .app .footer__copyright {
   text-align: right;
@@ -104,7 +104,7 @@ body {
 }
 .app .footer__logo {
   display: block;
-  font-family: "Fredoka One", cursive;
+  font-family: "Knewave", cursive;
 }
 .app .footer__icon {
   display: inline-block;
@@ -118,14 +118,14 @@ body {
 .loading-screen__avatar {
   width: 80px;
   height: 80px;
-  border: 3px solid #ffd23f;
+  border: 2px solid #ffd23f;
   border-radius: 50%;
   overflow: hidden;
   animation: float 2s ease-in-out infinite;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #212121;
+  background: #333;
   transition: opacity 250ms, visibility 250ms;
 }
 .loading-screen__img {
@@ -170,6 +170,7 @@ body {
 }
 .timer__path-elapsed {
   stroke-width: 2px;
+  stroke: #292929;
 }
 .timer__path-remaining {
   stroke-width: 1px;
@@ -181,6 +182,7 @@ body {
   paint-order: stroke;
 }
 .timer__time-left {
+  font-family: "Knewave", cursive;
   position: absolute;
   font-size: 2rem;
   font-weight: 400;
@@ -232,6 +234,10 @@ body {
   color: #f8f9fa;
 }
 
+#primary {
+  font-family: monospace;
+}
+
 .overlay.hidden {
   visibility: hidden;
   opacity: 0;
@@ -243,14 +249,14 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.25);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 210px minmax(400px, 1fr) minmax(400px, 1fr);
   place-content: center;
   place-items: center;
   z-index: 100;
-  transition: opacity 500ms, visibility 500ms;
+  transition: opacity 250ms, visibility 250ms;
   cursor: pointer;
 }
 
@@ -268,7 +274,7 @@ body {
   background-color: #f8f9fa;
   border-radius: 10px;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
-  transition: opacity 500ms, visibility 500ms;
+  transition: opacity 250ms, visibility 250ms;
   cursor: default;
 }
 
