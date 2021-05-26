@@ -5,10 +5,9 @@
 
 .modal {
 	color: #333;
-	grid-column: 1/ -1;
-	grid-row: 2 / 3;
-	width: 40rem;
-	height: 20rem;
+	grid-area: modal;
+	width: 100%;
+	height: 80%;
 	background-color: #f8f9fa;
 	border-radius: 10px;
 	box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);

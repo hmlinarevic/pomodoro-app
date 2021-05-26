@@ -7,14 +7,15 @@ body {
 }
 
 .app {
+	position: relative;
 	width: 500px;
 	background: #333;
 	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 	padding: 6rem;
 	border-radius: 25px;
 	display: grid;
-	row-gap: 4rem;
-	grid-template-rows: auto 1fr auto;
+	row-gap: 3rem;
+	grid-template-rows: 8rem 1fr 14rem;
 	grid-template-areas:
 		'header'
 		'timer'
