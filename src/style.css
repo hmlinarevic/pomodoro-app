@@ -55,8 +55,8 @@ body {
   padding: 6rem;
   border-radius: 25px;
   display: grid;
-  row-gap: 3rem;
-  grid-template-rows: 8rem 1fr 13rem;
+  row-gap: 4rem;
+  grid-template-rows: 8rem 1fr 11rem;
   grid-template-areas: "header" "timer" "footer";
   margin: 0 auto;
 }
@@ -87,14 +87,14 @@ body {
   color: #d2d7df;
   font-size: 1.2rem;
   font-weight: 300;
-  letter-spacing: 8px;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 .app .footer__about {
   font-weight: 300;
   line-height: 1.5;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 .app .footer__copyright {
   text-align: right;
@@ -252,12 +252,10 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
   display: grid;
-  row-gap: 3rem;
+  row-gap: 2rem;
   grid-template-columns: 1fr;
-  grid-template-rows: 8rem 1fr 13rem;
-  place-items: center;
+  grid-template-rows: 8rem 1fr 11rem;
   grid-template-areas: "." "modal" ".";
   z-index: 100;
   transition: opacity 250ms, visibility 250ms;
@@ -275,7 +273,7 @@ body {
   color: #333;
   grid-area: modal;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background-color: #f8f9fa;
   border-radius: 10px;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
