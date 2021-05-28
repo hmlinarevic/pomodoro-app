@@ -253,15 +253,11 @@ body {
   left: 0;
   background-color: rgba(0, 0, 0, 0.25);
   display: grid;
-  row-gap: 2rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: 8rem 1fr 10rem;
-  grid-template-areas: "." "modal" ".";
+  place-content: center;
   z-index: 100;
   transition: opacity 250ms, visibility 250ms;
   cursor: pointer;
   border-radius: 25px;
-  padding: 6rem;
 }
 
 .modal.hidden {
@@ -272,8 +268,8 @@ body {
 .modal {
   color: #333;
   grid-area: modal;
-  width: 100%;
-  height: 90%;
+  width: 400px;
+  height: 280px;
   background-color: #f8f9fa;
   border-radius: 10px;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);

@@ -12,17 +12,17 @@
 	background-color: rgba(0, 0, 0, 0.25);
 	// backdrop-filter: blur(4px);
 	display: grid;
-	row-gap: 2rem;
-	grid-template-columns: 1fr;
-	grid-template-rows: 8rem 1fr 10rem;
-	// place-items: center;
-	grid-template-areas:
-		'.'
-		'modal'
-		'.';
+	// row-gap: 2rem;
+	// grid-template-columns: 1fr;
+	// grid-template-rows: 8rem 1fr 10rem;
+	place-content: center;
+	// grid-template-areas:
+	// 	'.'
+	// 	'modal'
+	// 	'.';
 	z-index: 100;
 	transition: opacity 250ms, visibility 250ms;
 	cursor: pointer;
 	border-radius: 25px;
-	padding: 6rem;
+	// padding: 6rem;
 }
