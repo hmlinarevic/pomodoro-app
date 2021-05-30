@@ -2,6 +2,7 @@ import * as model from './model.js';
 import loadingView from './views/loadingView.js';
 import overlayView from './views/overlayView.js';
 import modalView from './views/modalView.js';
+import modalInputView from './views/modalInputView.js';
 import timerView from './views/timerView.js';
 import timerDisplayView from './views/timerDisplayView.js';
 import timerButtonsView from './views/timerButtonsView.js';
@@ -33,12 +34,14 @@ const controlStatisticsClick = () => {
 const controlSettingsClick = () => {
 	overlayView.on();
 	modalView.renderSettings();
+	modalInputView.listenForSubmit();
 	timerView.hideTimer();
 };
 
 const controlOverlayClick = () => {
-	overlayView.off();
+	if (modalView.isSettingsOn) modalInputView.checkInput();
 	modalView.hideModal();
+	overlayView.off();
 	timerView.showTimer();
 };
 
@@ -54,7 +57,7 @@ export const start = () => {
 	loadingView.on();
 	overlayView.addHandler(controlOverlayClick);
 	modalView.preventBubbling();
-	modalView.addHandler(controlIntervalInput);
+	modalInputView.addHandler(controlIntervalInput);
 	timerButtonsView.insertIcons();
 	timerButtonsView.addHandlers({
 		controlFocusClick,

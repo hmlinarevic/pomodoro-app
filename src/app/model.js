@@ -43,9 +43,7 @@ class Timer {
 		this.interval = setInterval(() => {
 			++secondsPassed;
 			secondsLeft = secondsTotal - secondsPassed;
-
 			strokeDasharray = calcStrokeDasharray(secondsLeft, secondsTotal);
-
 			this.dataHandler({ time: secondsLeft, strokeDasharray });
 
 			if (!secondsLeft) {
@@ -83,5 +81,7 @@ export const getInitialValues = () => {
 };
 
 export const updateUserInterval = newValue => {
+	console.log(newValue);
+	if (!newValue) return;
 	state.secondsTotal = newValue * 60;
 };

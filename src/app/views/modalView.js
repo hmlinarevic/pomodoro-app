@@ -7,10 +7,6 @@ class ModalView {
 		});
 	}
 
-	addHandler(handler) {
-		this._submitHandler = handler;
-	}
-
 	showModal() {
 		this._parentElement.style.visibility = 'visible';
 		this._parentElement.style.opacity = '1';
@@ -34,9 +30,8 @@ class ModalView {
 					type="number"
 					id="focus-interval"
 					name="focus-interval"
-					min="5" max="100">
+					min="1" max="120">
 			</form>
-
 		`;
 	}
 
@@ -48,26 +43,12 @@ class ModalView {
 		`;
 	}
 
-	_listenForSubmit() {
-		this._parentElement
-			.querySelector('.modal__settings')
-			.addEventListener('submit', e => {
-				this._onSubmitHandleValue(e);
-			});
-	}
-
-	_onSubmitHandleValue(e) {
-		e.preventDefault();
-		const inputValue = e.target.querySelector('.modal__input').value;
-		this._submitHandler(+inputValue);
-	}
-
 	renderSettings() {
 		this._clear();
 		this.showModal();
 		const markup = this._generateSettingsMarkup();
 		this._parentElement.insertAdjacentHTML('afterbegin', markup);
-		this._listenForSubmit();
+		this.isSettingsOn = true;
 	}
 
 	renderStatistics(pomodoros) {

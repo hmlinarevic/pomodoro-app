@@ -1,7 +1,7 @@
 class OverlayView {
 	_parentElement = document.querySelector('.overlay');
 
-	addHandler(overlayClick) {
+	addHandler(overlayClick, intervalInput) {
 		this._parentElement.addEventListener('click', e => {
 			overlayClick();
 		});
