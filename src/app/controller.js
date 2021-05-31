@@ -39,7 +39,14 @@ const controlSettingsClick = () => {
 };
 
 const controlOverlayClick = () => {
-	if (modalView.isSettingsOn) modalInputView.checkInput();
+	if (modalView.isSettingsOn) {
+		console.log(modalView.isSettingsOn);
+
+		modalInputView.checkInput();
+		modalView.settingsOff();
+	}
+	console.log(modalView.isSettingsOn);
+
 	modalView.hideModal();
 	overlayView.off();
 	timerView.showTimer();

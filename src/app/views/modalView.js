@@ -51,6 +51,10 @@ class ModalView {
 		this.isSettingsOn = true;
 	}
 
+	settingsOff() {
+		this.isSettingsOn = false;
+	}
+
 	renderStatistics(pomodoros) {
 		this._clear();
 		this.showModal();
