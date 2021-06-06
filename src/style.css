@@ -118,8 +118,8 @@ body {
   transition: opacity 500ms, visibility 500ms;
 }
 .loading-screen__avatar {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   border: 2px solid #ffd23f;
   border-radius: 50%;
   overflow: hidden;
